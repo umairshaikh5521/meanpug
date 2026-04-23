@@ -1,0 +1,145 @@
+<div id="mp-notice-modal" class="mp-modal-overlay" aria-hidden="true">
+	<div class="mp-modal" role="dialog" aria-modal="true" aria-labelledby="mp-modal-title">
+		<button class="mp-modal__close" aria-label="Close notice">&times;</button>
+		<!-- <div class="mp-modal__icon">
+			<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FFC800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div> -->
+		<h2 id="mp-modal-title" class="mp-modal__title">Concept Rebuild</h2>
+		<p class="mp-modal__body">
+			This is an <strong>unofficial concept rebuild</strong> of the MeanPug website. I migrated the original WordPress design to <strong>Astro</strong> on my own initiative to demonstrate modern frontend skills — faster performance, clean architecture, and a component-driven workflow. Built as part of a job application to MeanPug.
+		</p>
+		<div class="mp-modal__actions">
+			<button class="mp-modal__btn mp-modal__btn--primary">Explore the concept</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.mp-modal-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+		background: rgba(26, 27, 75, 0.65);
+		backdrop-filter: blur(4px);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.35s ease, visibility 0.35s ease;
+	}
+	.mp-modal-overlay.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+	.mp-modal {
+		position: relative;
+		width: 100%;
+		max-width: 480px;
+		background: #ffffff;
+		border-radius: 16px;
+		padding: 2.5rem 2rem 2rem;
+		text-align: center;
+		box-shadow: 0 24px 60px rgba(26, 27, 75, 0.25);
+		transform: translateY(12px) scale(0.98);
+		transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.mp-modal-overlay.is-open .mp-modal {
+		transform: translateY(0) scale(1);
+	}
+	.mp-modal__close {
+		position: absolute;
+		top: 12px;
+		right: 16px;
+		background: none;
+		border: none;
+		font-size: 1.5rem;
+		line-height: 1;
+		color: #9ca3af;
+		cursor: pointer;
+		padding: 4px;
+		transition: color 0.2s ease;
+	}
+	.mp-modal__close:hover {
+		color: #1a1b4b;
+	}
+	.mp-modal__icon {
+		margin-bottom: 1rem;
+	}
+	.mp-modal__title {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1a1b4b;
+		margin: 0 0 0.75rem;
+		line-height: 1.2;
+	}
+	.mp-modal__body {
+		font-size: 1rem;
+		color: #475569;
+		line-height: 1.6;
+		margin: 0 0 1.5rem;
+	}
+	.mp-modal__body strong {
+		color: #3a3fbf;
+	}
+	.mp-modal__actions {
+		display: flex;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+	.mp-modal__btn {
+		padding: 0.6rem 1.5rem;
+		border-radius: 8px;
+		font-size: 0.95rem;
+		font-weight: 600;
+		cursor: pointer;
+		border: 2px solid transparent;
+		transition: transform 0.15s ease, box-shadow 0.2s ease;
+	}
+	.mp-modal__btn:hover {
+		transform: translateY(-1px);
+	}
+	.mp-modal__btn--primary {
+		background: #ffc800;
+		color: #1a1b4b;
+		border-color: #ffc800;
+	}
+	.mp-modal__btn--primary:hover {
+		box-shadow: 0 4px 14px rgba(255, 200, 0, 0.45);
+	}
+</style>
+
+<script is:inline>
+	(function () {
+		var KEY = 'mp_wp_to_astros_notice_dismissed';
+		if (localStorage.getItem(KEY)) return;
+
+		var overlay = document.getElementById('mp-notice-modal');
+		if (!overlay) return;
+
+		function open() {
+			overlay.setAttribute('aria-hidden', 'false');
+			overlay.classList.add('is-open');
+		}
+		function close() {
+			overlay.setAttribute('aria-hidden', 'true');
+			overlay.classList.remove('is-open');
+			localStorage.setItem(KEY, '1');
+		}
+
+		// Open after a short delay so the user sees the page first
+		setTimeout(open, 900);
+
+		overlay.querySelector('.mp-modal__close').addEventListener('click', close);
+		overlay.querySelector('.mp-modal__btn--primary').addEventListener('click', close);
+		overlay.addEventListener('click', function (e) {
+			if (e.target === overlay) close();
+		});
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+		});
+	})();
+</script>

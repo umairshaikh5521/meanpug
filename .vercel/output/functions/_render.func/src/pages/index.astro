@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
+import Stats from "../components/Stats.astro";
+import AboutUs from "../components/AboutUs.astro";
+import Services from "../components/Services.astro";
+import SuccessHighlight from "../components/SuccessHighlight.astro";
+import BigImageHighlight from "../components/BigImageHighlight.astro";
+import Clients from "../components/Clients.astro";
+import PortfolioCarousel from "../components/PortfolioCarousel.astro";
+import CaseTypes from "../components/CaseTypes.astro";
+import OurProcess from "../components/OurProcess.astro";
+import TeamCarousel from "../components/TeamCarousel.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+	<div id="content" class="site-content front-page">
+		<Header />
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main">
+				<article
+					id="post-66"
+					class="post-66 page type-page status-publish hentry"
+				>
+					<Hero />
+					<Marquee />
+					<Stats />
+					<AboutUs />
+					<Services />
+					<SuccessHighlight />
+					<BigImageHighlight />
+					<Clients />
+					<PortfolioCarousel />
+					<CaseTypes />
+					<OurProcess />
+					<TeamCarousel />
+				</article>
+			</main>
+		</div>
+	</div>
+	<ContactForm />
+	<Footer />
+</Layout>
