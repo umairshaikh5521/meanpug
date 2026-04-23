@@ -1,0 +1,220 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section
+    class="relative overflow-hidden h-screen-3/4 md:h-screen-85 flex items-center bg-yellow mp-home-hero-block mp-mobile-bounds"
+>
+    <video
+        class="absolute left-0 top-0 w-full md:w-auto xl:w-full h-full xl:h-auto z-20 object-contain object-center mp-home-hero-block__video mp-responsive-video"
+        src="/assets/images/misc/MeanPug-Digital-Agency-Grows-Law-Firms.mp4"
+        playsinline
+        muted
+    >
+        <source
+            src="/assets/images/misc/MeanPug-Grows-Law-Firms-Mobile-Animation.mp4"
+            data-mw="639"
+            type="video/mp4"
+        />
+        Your browser does not support the video tag.
+    </video>
+
+    <div
+        class="svg-animation absolute left-0 top-0 -ml-8 z-10 w-32"
+        data-svg="/assets/animations/shapes/expanding-square-red-home/expanding-square-red-home.json"
+    >
+    </div>
+    <div
+        class="svg-animation absolute left-1/2 top-0 mt-8 -ml-16 z-10 w-48"
+        data-svg="/assets/animations/shapes/spring-red/spring-red.json"
+    >
+    </div>
+    <div
+        class="svg-animation absolute right-0 top-0 -mr-8 z-10 w-80"
+        data-svg="/assets/animations/shapes/squiggle-yellow-light-home/squiggle-yellow-light-home.json"
+    >
+    </div>
+    <div
+        class="svg-animation absolute left-0 top-0 -ml-20 mt-80 z-10 w-32"
+        data-svg="/assets/animations/shapes/oval-360-yellow-light/oval-360-yellow-light.json"
+    >
+    </div>
+
+    <div class="container mx-auto z-10 pt-24 pb-12 px-3 xl:px-0">
+        <div class="md:relative">
+            <div
+                class="text-purple font-bold leading-relaxed md:leading-tight mp-header--2xl md:mp-header--6xl mp-emphasis-text mp-emphasis-text--bg-red mp-emphasis-text--text-white mp-leading-inner--tight md:pr-32 lg:pr-64 mp-home-hero-block__header"
+            >
+                <h1>
+                    <span
+                        class="ez-toc-section"
+                        id="a-full-service-marketing-partner-for-law-firms"
+                    ></span>a Full-Service Marketing Partner for <strong
+                        >Law Firms</strong
+                    ><span class="ez-toc-section-end"></span>
+                </h1>
+            </div>
+
+            <Image
+                fetchpriority="high"
+                width="243"
+                height="243"
+                decoding="async"
+                src="/assets/images/illustrations/ill-play-paw.svg"
+                alt="play button"
+                class="absolute bottom-0 md:top-auto mb-8 md:-mb-16 xl:mb-0 mp-animation mp-animation--rotate mp-animation--rotate--360 cursor-pointer w-32 lg:w-48 mp-home-hero-block__button z-10"
+            />
+        </div>
+
+        <div
+            class="flex flex-col md:flex-row justify-between md:items-center relative pt-8 md:pt-24"
+        >
+            <div class="mp-home-hero-block__resources">
+                <a
+                    class="flex items-center mp-widget mp-download-link mp-link mp-link--ic hover:mp-link--ic--purple underline text-purple-900 hover:text-purple font-bold transition-transform transform hover:scale-110"
+                    href="https://media.meanpug.com/wp-content/uploads/sites/35/2021/08/22172928/Checklist_for_lawfirms.pdf"
+                >
+                    <Image
+                        width="40"
+                        height="48"
+                        decoding="async"
+                        src="/assets/images/icons/ic-download-black.svg"
+                        alt="download icon"
+                        class="mp-download-link__icon mp-link--ic__ic"
+                    />
+
+                    <span class="ml-3 pt-2 inline-block">
+                        Free Download: Legal Marketing Checklist
+                    </span>
+                </a>
+            </div>
+
+            <button
+                type="button"
+                class="items-center mp-scroll-down-button flex pt-32 md:pt-0 mp-link mp-link--caret mp-home-hero-block__scroll"
+            >
+                <span class="font-bold text-sm text-purple-900 pr-2"
+                    >scroll down</span
+                >
+                <Image
+                    width="10"
+                    height="8"
+                    decoding="async"
+                    src="/assets/images/icons/ic-caret-down-black.svg"
+                    alt="down caret"
+                    class="mp-link--caret__ic mp-link--caret__ic--down"
+                />
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    import lottie from "lottie-web";
+
+    const heroBlock = document.querySelector(".mp-home-hero-block");
+    if (heroBlock) {
+        const video = heroBlock.querySelector(
+            ".mp-home-hero-block__video",
+        ) as HTMLVideoElement;
+        const playBtn = heroBlock.querySelector(".mp-home-hero-block__button");
+        const scrollDownBtn = heroBlock.querySelector(
+            ".mp-scroll-down-button",
+        ) as HTMLButtonElement | null;
+        const svgContainers = heroBlock.querySelectorAll(".svg-animation");
+
+        if (scrollDownBtn) {
+            scrollDownBtn.addEventListener("click", (event) => {
+                event.preventDefault();
+
+                const nextSection =
+                    heroBlock.nextElementSibling as HTMLElement | null;
+                if (nextSection) {
+                    nextSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                    return;
+                }
+
+                window.scrollTo({
+                    top: window.scrollY + window.innerHeight,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Load Lottie animations in paused state
+        const animations = Array.from(svgContainers)
+            .map((container) => {
+                const dataSvg = container.getAttribute("data-svg");
+                if (dataSvg) {
+                    return lottie.loadAnimation({
+                        container: container as HTMLElement,
+                        renderer: "svg",
+                        loop: false,
+                        autoplay: false,
+                        path: dataSvg,
+                    });
+                }
+                return null;
+            })
+            .filter(Boolean);
+
+        if (video) {
+            let isLoaded = false;
+
+            // 1. Wait for video to be ready
+            video.addEventListener("loadeddata", () => {
+                isLoaded = true;
+            });
+            if (video.readyState >= 3) {
+                isLoaded = true;
+            }
+
+            // 2. Play Sequence
+            const playSequence = () => {
+                heroBlock.classList.add("video-playing");
+                const frontPage = document.querySelector(".front-page");
+                if (frontPage) frontPage.classList.add("video-playing");
+                video
+                    .play()
+                    .catch((e) => console.error("Video play prevented:", e));
+            };
+
+            // 3. Coordinator Function
+            let playTriggered = false;
+            const triggerPlay = () => {
+                if (playTriggered) return;
+                playTriggered = true;
+
+                if (isLoaded) {
+                    playSequence();
+                } else {
+                    const checkInterval = setInterval(() => {
+                        if (isLoaded) {
+                            clearInterval(checkInterval);
+                            playSequence();
+                        }
+                    }, 500);
+                }
+            };
+
+            // 4. Attach trigger to button click and 3s timeout
+            if (playBtn) {
+                playBtn.addEventListener("click", triggerPlay);
+            }
+            setTimeout(triggerPlay, 3000);
+
+            // 5. When video ends, swap states and play SVG animations!
+            video.addEventListener("ended", () => {
+                heroBlock.classList.remove("video-playing");
+                const frontPage = document.querySelector(".front-page");
+                if (frontPage) frontPage.classList.remove("video-playing");
+
+                heroBlock.classList.add("video-played");
+                animations.forEach((anim) => anim && anim.play());
+            });
+        }
+    }
+</script>

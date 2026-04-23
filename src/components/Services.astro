@@ -1,0 +1,291 @@
+---
+import { Image } from "astro:assets";
+---
+
+--- ---
+<section class="pt-8 bg-purple mp-services mp-mobile-bounds overflow-hidden">
+    <div class="container mx-auto border-t border-yellow pt-2">
+        <div class="flex justify-between items-center">
+            <strong
+                class="font-medium text-xl uppercase tracking-wider text-white md:text-yellow"
+                >Our Services</strong
+            >
+
+            <a
+                class="flex items-center font-bold text-sm text-yellow hover:text-white transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--white"
+                href="https://www.meanpug.com/what-we-offer/"
+            >
+                <Image
+                    width="18"
+                    height="20"
+                    decoding="async"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2020'%3E%3C/svg%3E"
+                    alt="plus icon"
+                    class="mp-link--ic__ic"
+                    src="/assets/images/icons/ic-plus-circle-yellow.svg"
+                /><noscript
+                    ><Image
+                        width="18"
+                        height="20"
+                        decoding="async"
+                        src="/assets/images/icons/ic-plus-circle-yellow.svg"
+                        alt="plus icon"
+                        class="mp-link--ic__ic"
+                    /></noscript
+                >
+
+                <span class="ml-2 md:ml-4 inline-block underline pt-1">
+                    All Services
+                </span>
+            </a>
+        </div>
+
+        <div
+            class="pt-8 md:pt-12 pb-4 mp-carousel mp-carousel--services mp-js-cursor-container glide"
+            id="mp-services-carousel"
+            data-cursor-image="assets/images/illustrations/ill-drag-paw-dark.png"
+        >
+            <div class="glide__track" data-glide-el="track">
+                <ul class="flex glide__slides">
+                    <li class="md:px-6 mp-service glide__slide">
+                        <a
+                            href="https://www.meanpug.com/service/law-firm-seo/"
+                            class="text-yellow md:text-white hover:text-white md:hover:text-yellow"
+                        >
+                            <h3
+                                class="mp-header mp-header--3xl leading-tight md:leading-snug font-bold"
+                            >
+                                <span class="ez-toc-section" id="law-firm-seo"
+                                ></span>Law Firm SEO<span
+                                    class="ez-toc-section-end"></span>
+                            </h3>
+                        </a>
+
+                        <p class="text-sm leading-relaxed pt-6 pb-8 text-white">
+                            SEO for law firms is essential if you want to
+                            catapult your business to the next level! At
+                            MeanPug, we thrive on real-world results for our
+                            clients and always allow data to dictate our
+                            strategy.
+                        </p>
+
+                        <div class="flex items-center mp-service__hidden-link">
+                            <span
+                                class="text-sm text-yellow-700 underline font-bold"
+                                >View Service</span
+                            >
+                            <Image
+                                width="3"
+                                height="7"
+                                decoding="async"
+                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203%207'%3E%3C/svg%3E"
+                                alt="caret icon"
+                                class="ml-3"
+                                src="/assets/images/icons/ic-caret-right-yellow.svg"
+                            /><noscript
+                                ><Image
+                                    width="3"
+                                    height="7"
+                                    decoding="async"
+                                    src="/assets/images/icons/ic-caret-right-yellow.svg"
+                                    alt="caret icon"
+                                    class="ml-3"
+                                /></noscript
+                            >
+                        </div>
+                    </li>
+                    <li class="md:px-6 mp-service glide__slide">
+                        <a
+                            href="https://www.meanpug.com/service/law-firm-branding/"
+                            class="text-yellow md:text-white hover:text-white md:hover:text-yellow"
+                        >
+                            <h3
+                                class="mp-header mp-header--3xl leading-tight md:leading-snug font-bold"
+                            >
+                                <span
+                                    class="ez-toc-section"
+                                    id="law-firm-branding"></span>Law Firm
+                                Branding<span class="ez-toc-section-end"></span>
+                            </h3>
+                        </a>
+
+                        <p class="text-sm leading-relaxed pt-6 pb-8 text-white">
+                            Branding is about more than style. Your brand is
+                            your values, mission, history, visual form, and
+                            &#8211; most importantly &#8211; first impression
+                            for new potential clients. Every law firm is a
+                            singular brand. The team at MeanPug Digital is here
+                            to help you express that uniqueness to the world.
+                        </p>
+
+                        <div class="flex items-center mp-service__hidden-link">
+                            <span
+                                class="text-sm text-yellow-700 underline font-bold"
+                                >View Service</span
+                            >
+                            <Image
+                                width="3"
+                                height="7"
+                                decoding="async"
+                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203%207'%3E%3C/svg%3E"
+                                alt="caret icon"
+                                class="ml-3"
+                                src="/assets/images/icons/ic-caret-right-yellow.svg"
+                            /><noscript
+                                ><Image
+                                    width="3"
+                                    height="7"
+                                    decoding="async"
+                                    src="/assets/images/icons/ic-caret-right-yellow.svg"
+                                    alt="caret icon"
+                                    class="ml-3"
+                                /></noscript
+                            >
+                        </div>
+                    </li>
+                    <li class="md:px-6 mp-service glide__slide">
+                        <a
+                            href="https://www.meanpug.com/service/law-firm-website-design-and-development/"
+                            class="text-yellow md:text-white hover:text-white md:hover:text-yellow"
+                        >
+                            <h3
+                                class="mp-header mp-header--3xl leading-tight md:leading-snug font-bold"
+                            >
+                                <span
+                                    class="ez-toc-section"
+                                    id="law-firm-web-design-and-development"
+                                ></span>Law Firm Web Design and Development<span
+                                    class="ez-toc-section-end"></span>
+                            </h3>
+                        </a>
+
+                        <p class="text-sm leading-relaxed pt-6 pb-8 text-white">
+                            You dream it, we build it. We&#8217;ve designed and
+                            developed award-winning websites for our law firm
+                            clients that look amazing, perform seamlessly, and
+                            solidly scaffold all other digital initiatives.
+                        </p>
+
+                        <div class="flex items-center mp-service__hidden-link">
+                            <span
+                                class="text-sm text-yellow-700 underline font-bold"
+                                >View Service</span
+                            >
+                            <Image
+                                width="3"
+                                height="7"
+                                decoding="async"
+                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203%207'%3E%3C/svg%3E"
+                                alt="caret icon"
+                                class="ml-3"
+                                src="/assets/images/icons/ic-caret-right-yellow.svg"
+                            /><noscript
+                                ><Image
+                                    width="3"
+                                    height="7"
+                                    decoding="async"
+                                    src="/assets/images/icons/ic-caret-right-yellow.svg"
+                                    alt="caret icon"
+                                    class="ml-3"
+                                /></noscript
+                            >
+                        </div>
+                    </li>
+                    <li class="md:px-6 mp-service glide__slide">
+                        <a
+                            href="https://www.meanpug.com/service/law-firm-digital-advertising/"
+                            class="text-yellow md:text-white hover:text-white md:hover:text-yellow"
+                        >
+                            <h3
+                                class="mp-header mp-header--3xl leading-tight md:leading-snug font-bold"
+                            >
+                                <span
+                                    class="ez-toc-section"
+                                    id="law-firm-digital-advertising"></span>Law
+                                Firm Digital Advertising<span
+                                    class="ez-toc-section-end"></span>
+                            </h3>
+                        </a>
+
+                        <p class="text-sm leading-relaxed pt-6 pb-8 text-white">
+                            Sign more cases with digital advertising for
+                            lawyers. Digital ads come in many different shapes
+                            and sizes, the art is in finding the format(s) that
+                            profitably generate cases for your practice.
+                        </p>
+
+                        <div class="flex items-center mp-service__hidden-link">
+                            <span
+                                class="text-sm text-yellow-700 underline font-bold"
+                                >View Service</span
+                            >
+                            <Image
+                                width="3"
+                                height="7"
+                                decoding="async"
+                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203%207'%3E%3C/svg%3E"
+                                alt="caret icon"
+                                class="ml-3"
+                                src="/assets/images/icons/ic-caret-right-yellow.svg"
+                            /><noscript
+                                ><Image
+                                    width="3"
+                                    height="7"
+                                    decoding="async"
+                                    src="/assets/images/icons/ic-caret-right-yellow.svg"
+                                    alt="caret icon"
+                                    class="ml-3"
+                                /></noscript
+                            >
+                        </div>
+                    </li>
+                    <li class="md:px-6 mp-service glide__slide">
+                        <a
+                            href="https://www.meanpug.com/service/law-firm-geo/"
+                            class="text-yellow md:text-white hover:text-white md:hover:text-yellow"
+                        >
+                            <h3
+                                class="mp-header mp-header--3xl leading-tight md:leading-snug font-bold"
+                            >
+                                <span class="ez-toc-section" id="law-firm-geo"
+                                ></span>Law Firm GEO<span
+                                    class="ez-toc-section-end"></span>
+                            </h3>
+                        </a>
+
+                        <p class="text-sm leading-relaxed pt-6 pb-8 text-white">
+                            Law firm GEO means showing up higher &#8211; and
+                            more often &#8211; in answer engines like Google
+                            Gemini, ChatGPT, Copilot, Perplexity, and more
+                        </p>
+
+                        <div class="flex items-center mp-service__hidden-link">
+                            <span
+                                class="text-sm text-yellow-700 underline font-bold"
+                                >View Service</span
+                            >
+                            <Image
+                                width="3"
+                                height="7"
+                                decoding="async"
+                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203%207'%3E%3C/svg%3E"
+                                alt="caret icon"
+                                class="ml-3"
+                                src="/assets/images/icons/ic-caret-right-yellow.svg"
+                            /><noscript
+                                ><Image
+                                    width="3"
+                                    height="7"
+                                    decoding="async"
+                                    src="/assets/images/icons/ic-caret-right-yellow.svg"
+                                    alt="caret icon"
+                                    class="ml-3"
+                                /></noscript
+                            >
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

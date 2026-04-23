@@ -1,0 +1,258 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section
+	class="bg-purple py-6 md:py-12 mp-case-types overflow-hidden mp-mobile-bounds"
+>
+	<div class="container mx-auto">
+		<div
+			class="flex flex-col lg:flex-row items-center lg:items-start relative"
+		>
+			<Image
+				width="20"
+				height="18"
+				decoding="async"
+				src={"/assets/images/icons/ic-paw-yellow.svg"}
+				alt="Paw Icon"
+				class="w-12 mt-4 mx-auto md:mx-0"
+			/>
+
+			<div
+				class="mp-header mp-header--2xl md:mp-header--5xl lg:mp-header--6xl font-bold text-yellow leading-tight pl-0 lg:pl-8 pt-4 lg:pt-0 text-center lg:text-left"
+			>
+				<h2>
+					Case Types<br />
+					We Play Well With
+				</h2>
+			</div>
+			<div class="w-32 lg:w-64 svg-animation" data-svg="https://media-v2.meanpug.com/wp-content/themes/meanpug-theme-v2/assets/animations/shapes/line-and-squiggle-doodle/line-and-squiggle-doodle.json"></div>
+		</div>
+
+		<div class="relative">
+			<div class="md:grid grid-cols-2 pt-8 md:pt-16 mp-case-types__grid">
+				<div class="pl-3 md:pl-16 lg:pl-32 xl:pl-48">
+					<ul>
+						<li
+							class="flex flex-col md:flex-row md:items-center mp-case-type__parent border-b-3 border-yellow md:border-b-0 pb-4 md:pb-0"
+						>
+							<span
+								class="inline-block pt-3 md:pt-0 md:pr-24 xl:pr-32 text-white text-xl md:text-2xl font-bold mp-case-type__ix"
+								>01</span
+							>
+
+							<div
+								class="pb-3 md:pb-6 md:border-b-3 md:border-yellow flex-grow w-full md:w-auto"
+							>
+								<button
+									data-target="mp-detail-personal-injury"
+									class="text-white hover:text-yellow text-lg md:text-xl lg:text-2xl hover:font-bold mp-case-types__link"
+								>
+									Personal Injury
+								</button>
+							</div>
+						</li>
+						<li
+							class="flex flex-col md:flex-row md:items-center mp-case-type__parent border-b-3 border-yellow md:border-b-0 pb-4 md:pb-0"
+						>
+							<span
+								class="inline-block pt-3 md:pt-0 md:pr-24 xl:pr-32 text-white text-xl md:text-2xl font-bold mp-case-type__ix"
+								>02</span
+							>
+
+							<div
+								class="py-2 md:py-6 md:border-b-3 md:border-yellow flex-grow w-full md:w-auto"
+							>
+								<button
+									data-target="mp-detail-mass-tort"
+									class="text-white hover:text-yellow text-lg md:text-xl lg:text-2xl hover:font-bold mp-case-types__link"
+								>
+									Mass Tort
+								</button>
+							</div>
+						</li>
+						<li
+							class="flex flex-col md:flex-row md:items-center mp-case-type__parent border-b-3 border-yellow md:border-b-0 pb-4 md:pb-0"
+						>
+							<span
+								class="inline-block pt-3 md:pt-0 md:pr-24 xl:pr-32 text-white text-xl md:text-2xl font-bold mp-case-type__ix"
+								>03</span
+							>
+
+							<div
+								class="py-2 md:py-6 md:border-b-3 md:border-yellow flex-grow w-full md:w-auto"
+							>
+								<button
+									data-target="mp-detail-insurance-dispute"
+									class="text-white hover:text-yellow text-lg md:text-xl lg:text-2xl hover:font-bold mp-case-types__link"
+								>
+									Insurance Dispute
+								</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="relative">
+					<ul
+						class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 md:list-disc absolute top-0 left-0 w-full px-6 md:px-16 lg:px-24 mp-case-types__detail"
+						data-id="mp-detail-personal-injury"
+					>
+						<li class="text-white">
+							<span>Auto Accidents</span>
+						</li>
+						<li class="text-white">
+							<span>Catastrophic Personal Injury</span>
+						</li>
+						<li class="text-white">
+							<span>Product Liability</span>
+						</li>
+						<li class="text-white">
+							<span>Premises Liability</span>
+						</li>
+						<li class="text-white">
+							<span>Slip and Fall</span>
+						</li>
+						<li class="text-white">
+							<span>Medical Malpractice</span>
+						</li>
+						<li class="text-white">
+							<span>Birth Injuries</span>
+						</li>
+						<li class="text-white">
+							<span>Fire Injury</span>
+						</li>
+						<li class="text-white">
+							<span>Sexual Abuse</span>
+						</li>
+						<li class="text-white">
+							<span>Asbestos and Mesothelioma</span>
+						</li>
+					</ul>
+					<ul
+						class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 md:list-disc absolute top-0 left-0 w-full px-6 md:px-16 lg:px-24 mp-case-types__detail"
+						data-id="mp-detail-mass-tort"
+					>
+						<li class="text-white">
+							<span>Zantac</span>
+						</li>
+						<li class="text-white">
+							<span>Paraquat</span>
+						</li>
+						<li class="text-white">
+							<span>Roundup</span>
+						</li>
+						<li class="text-white">
+							<span>Dilantin</span>
+						</li>
+						<li class="text-white">
+							<span>Elmiron</span>
+						</li>
+						<li class="text-white">
+							<span>Talcum Powder</span>
+						</li>
+						<li class="text-white">
+							<span>Nexium / PPI</span>
+						</li>
+						<li class="text-white">
+							<span>Hernia Mesh</span>
+						</li>
+						<li class="text-white">
+							<span>Allergan Breast Implants</span>
+						</li>
+						<li class="text-white">
+							<span>Bair Hugger</span>
+						</li>
+						<li class="text-white">
+							<span>And More&#8230;</span>
+						</li>
+					</ul>
+					<ul
+						class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 md:list-disc absolute top-0 left-0 w-full px-6 md:px-16 lg:px-24 mp-case-types__detail"
+						data-id="mp-detail-insurance-dispute"
+					>
+						<li class="text-white">
+							<span>Bad Faith First Party</span>
+						</li>
+						<li class="text-white">
+							<span>Hurricane Damage</span>
+						</li>
+						<li class="text-white">
+							<span>Flood Damage</span>
+						</li>
+						<li class="text-white">
+							<span>Fire Damage</span>
+						</li>
+						<li class="text-white">
+							<span>Wind Damage</span>
+						</li>
+						<li class="text-white">
+							<span>Hail Damage</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.mp-case-types .mp-case-types__detail {
+		pointer-events: none;
+	}
+	.mp-case-types .mp-case-types__detail.active {
+		display: grid !important;
+		pointer-events: auto;
+	}
+</style>
+
+<script>
+	const initCaseTypes = () => {
+		const caseTypesSection = document.querySelector(".mp-case-types");
+		if (!(caseTypesSection instanceof HTMLElement)) return;
+
+		const details = Array.from(
+			caseTypesSection.querySelectorAll<HTMLElement>(
+				".mp-case-types__detail",
+			),
+		);
+		const links = Array.from(
+			caseTypesSection.querySelectorAll<HTMLButtonElement>(
+				".mp-case-types__link",
+			),
+		);
+
+		const activateDetail = (targetId: string) => {
+			const normalizedTargetId = targetId.replace(/^#/, "");
+			details.forEach((detail) => detail.classList.remove("active"));
+
+			const target = caseTypesSection.querySelector<HTMLElement>(
+				`.mp-case-types__detail[data-id="${normalizedTargetId}"]`,
+			);
+			if (target) {
+				target.classList.add("active");
+			}
+		};
+
+		links.forEach((link) => {
+			const targetId = link.getAttribute("data-target");
+			if (!targetId) return;
+
+			const parentLi = link.closest(".mp-case-type__parent");
+			const handler = () => activateDetail(targetId);
+
+			link.addEventListener("mouseenter", handler);
+			if (parentLi) {
+				parentLi.addEventListener("mouseenter", handler);
+			}
+		});
+	};
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initCaseTypes, {
+			once: true,
+		});
+	} else {
+		initCaseTypes();
+	}
+</script>

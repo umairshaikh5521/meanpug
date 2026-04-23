@@ -1,0 +1,42 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "MeanPug | Award-Winning Digital Agency",
+	description = "MeanPug is a full-service digital agency built for growth.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="/assets/images/logos/favicon-100x100.png"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	</head>
+	<body
+		class="home wp-singular page-template-default page page-id-66 wp-custom-logo wp-theme-meanpug-theme-v2"
+	>
+		<div id="page" class="site">
+			<slot />
+		</div>
+
+		<script src="/assets/js/jquery.min.js" is:inline></script>
+		<script src="/assets/js/jquery-migrate.min.js" is:inline defer></script>
+		<script src="/assets/js/main.js" is:inline defer></script>
+	</body>
+</html>

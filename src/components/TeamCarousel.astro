@@ -1,0 +1,364 @@
+---
+import { Image } from "astro:assets";
+interface TeamMember {
+	name: string;
+	role: string;
+	email: string;
+	link?: string;
+	defaultImg: string;
+	hoverImg: string;
+}
+
+const teamMembers: TeamMember[] = [
+	{
+		name: "Bobby Steinbach",
+		role: "Founding Partner",
+		email: "bobby@meanpug.com",
+		link: "https://www.meanpug.com/team/bobby-steinbach/",
+		defaultImg: "/assets/images/team/Bobby-Steinbach-949x1024.jpg",
+		hoverImg: "/assets/images/team/bobby_new-main-illustration.png",
+	},
+	{
+		name: "Andrew Nasrinpay",
+		role: "Partner",
+		email: "andrew@meanpug.com",
+		link: "https://www.meanpug.com/team/andrew-nasrinpay/",
+		defaultImg:
+			"/assets/images/team/andy_final-dimensions-home-949x1024.png",
+		hoverImg: "/assets/images/team/andy-illustration-main_final.png",
+	},
+	{
+		name: "Mike Jones",
+		role: "Partner",
+		email: "mike@meanpug.com",
+		defaultImg: "/assets/images/team/mike_new-main-image-949x1024.png",
+		hoverImg: "/assets/images/team/mike_new-main-illustration.png",
+	},
+	{
+		name: "Tara Lee",
+		role: "Account Executive",
+		email: "tara@meanpug.com",
+		link: "https://www.meanpug.com/team/tara-lee/",
+		defaultImg: "/assets/images/team/Tara-Home.png",
+		hoverImg: "/assets/images/team/Tara-Home-illustration.png",
+	},
+	{
+		name: "Oxana Skripka",
+		role: "Creative Director",
+		email: "oxana@meanpug.com",
+		link: "https://www.meanpug.com/team/oxana-skripka/",
+		defaultImg: "/assets/images/team/Oxana-Skripka-949x1024.png",
+		hoverImg: "/assets/images/team/oxana_hp.png",
+	},
+	{
+		name: "Lyn Jiang",
+		role: "Senior Designer",
+		email: "lyn@meanpug.com",
+		link: "https://www.meanpug.com/team/lyn-jiang/",
+		defaultImg: "/assets/images/team/lyn-jiang-headshot.jpg",
+		hoverImg: "/assets/images/team/lyn-jiang-headshot-flipped.jpg",
+	},
+	{
+		name: "Alla Breslavtseva",
+		role: "Designer",
+		email: "alla@meanpug.com",
+		defaultImg: "/assets/images/team/MeanPug-Girl-Main-949x1024.png",
+		hoverImg: "/assets/images/team/MeanPug-Girl-Main-Hover.png",
+	},
+	{
+		name: "Kim Hayslett",
+		role: "Director of Account Strategy",
+		email: "kim@meanpug.com",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Kim.jpg",
+		hoverImg: "/assets/images/team/Homepage_Illustr_949x1024_KIM.png",
+	},
+	{
+		name: "Naveena Sekaran",
+		role: "Key Account Strategist",
+		email: "naveena@meanpug.com",
+		link: "https://www.meanpug.com/team/naveena-sekaran/",
+		defaultImg: "/assets/images/team/Naveena-home-1.png",
+		hoverImg: "/assets/images/team/Naveena-home-illustration-1.png",
+	},
+	{
+		name: "Sydney Terzic",
+		role: "Key Account Strategist",
+		email: "sydney@meanpug.com",
+		link: "https://www.meanpug.com/team/sydney-terzic/",
+		defaultImg: "/assets/images/team/sydney-terzic-home.png",
+		hoverImg: "/assets/images/team/sydney-terzic-home-illustrated.png",
+	},
+	{
+		name: "Liam Stirling",
+		role: "Senior Account Strategist",
+		email: "liam@meanpug.com",
+		link: "https://www.meanpug.com/team/liam-stirling/",
+		defaultImg: "/assets/images/team/Liam-Sterling-Home-photo.png",
+		hoverImg: "/assets/images/team/Liam-Sterling-Home-Illustration.png",
+	},
+	{
+		name: "Micah Coy",
+		role: "Senior Account Strategist",
+		email: "micah@meanpug.com",
+		link: "https://www.meanpug.com/team/micah-coy/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Micah.png",
+		hoverImg: "/assets/images/team/Homepage_Illustr_949x1024_Micah.png",
+	},
+	{
+		name: "Ishani Dash",
+		role: "Account Strategist",
+		email: "ishani@meanpug.com",
+		link: "https://www.meanpug.com/team/ishani-dash/",
+		defaultImg: "/assets/images/team/Ishani-Dash-949x1024.png",
+		hoverImg: "/assets/images/team/ishani_hp.png",
+	},
+	{
+		name: "Rob Henrichs",
+		role: "Account Strategist",
+		email: "rob@meanpug.com",
+		link: "https://www.meanpug.com/team/rob-henrichs/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Rob.jpg",
+		hoverImg: "/assets/images/team/Homepage_Illustr_949x1024_Rob-1.png",
+	},
+	{
+		name: "Brian Grill",
+		role: "Account Strategist",
+		email: "brian@meanpug.com",
+		link: "https://www.meanpug.com/team/brian-grill/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Brian.jpg",
+		hoverImg: "/assets/images/team/About-us_Illustr_960x960_Brian-1.png",
+	},
+	{
+		name: "Liam Lipsky",
+		role: "SEO Manager",
+		email: "liamlipsky@meanpug.com",
+		link: "https://www.meanpug.com/team/liam-lipsky/",
+		defaultImg: "/assets/images/team/Liam-Home.png",
+		hoverImg: "/assets/images/team/Liam-Home-illustrations.png",
+	},
+	{
+		name: "Josh Blackburn",
+		role: "SEO Manager",
+		email: "josh@meanpug.com",
+		link: "https://www.meanpug.com/team/josh-blackburn/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Josh_B.jpg",
+		hoverImg: "/assets/images/team/Homepage_Illustr_949x1024_Josh_B.png",
+	},
+	{
+		name: "Ryan Yamada",
+		role: "Content Specialist",
+		email: "ryan@meanpug.com",
+		link: "https://www.meanpug.com/team/ryan-yamada/",
+		defaultImg: "/assets/images/team/ryan-yamada-home.png",
+		hoverImg: "/assets/images/team/ryan-yamada-home-illustrated.png",
+	},
+	{
+		name: "Kailyn Champlin",
+		role: "Content Specialist",
+		email: "kailyn@meanpug.com",
+		link: "https://www.meanpug.com/team/kailyn-champlin/",
+		defaultImg: "/assets/images/team/kailyn-champlin-home.png",
+		hoverImg: "/assets/images/team/kailyn-champlin-home-illustrated.png",
+	},
+	{
+		name: "Dana Abatemarco",
+		role: "Content Specialist",
+		email: "dana@meanpug.com",
+		link: "https://www.meanpug.com/team/dana-abatemarco/",
+		defaultImg: "/assets/images/team/dana-abatemarco-home.png",
+		hoverImg: "/assets/images/team/dana-abatemarco-home-illustrated.png",
+	},
+	{
+		name: "Yitz Shapiro",
+		role: "Senior Operations Manager",
+		email: "yitz@meanpug.com",
+		link: "https://www.meanpug.com/team/yitz-shapiro/",
+		defaultImg: "/assets/images/team/yitz-shapiro-home.jpg",
+		hoverImg: "/assets/images/team/yitz-shapiro-home-illustrated.jpg",
+	},
+	{
+		name: "Jack McCarthy",
+		role: "Operations Manager",
+		email: "jack@meanpug.com",
+		link: "https://www.meanpug.com/team/jack-mccarthy/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Jack.png",
+		hoverImg: "/assets/images/team/Homepage_illustr_949x1024_Jack-1.png",
+	},
+	{
+		name: "Patrick Mahoney",
+		role: "Video Specialist",
+		email: "patrick@meanpug.com",
+		defaultImg: "/assets/images/team/men_main02-949x1024.png",
+		hoverImg: "/assets/images/team/men_main02_hover.png",
+	},
+	{
+		name: "Anthony Jewett",
+		role: "Digital Advertising Specialist",
+		email: "anthony@meanpug.com",
+		link: "https://www.meanpug.com/team/anthony-jewett/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_Anthony.png",
+		hoverImg: "/assets/images/team/Homepage_illustr_949x1024_Anthony.png",
+	},
+	{
+		name: "John Lipartito",
+		role: "Digital Advertising Specialist",
+		email: "john@meanpug.com",
+		link: "https://www.meanpug.com/team/john-lipartito/",
+		defaultImg: "/assets/images/team/Homepage_photo_949x1024_John.png",
+		hoverImg: "/assets/images/team/Homepage_illustr_949x1024_John.png",
+	},
+	{
+		name: "Andy Berman",
+		role: "Traditional Media Director",
+		email: "andy@meanpug.com",
+		defaultImg: "/assets/images/team/men_main02-949x1024.png",
+		hoverImg: "/assets/images/team/men_main02_hover.png",
+	},
+	{
+		name: "Aleksandar Ciric",
+		role: "Lead WordPress Developer",
+		email: "aleksandar@meanpug.com",
+		link: "https://www.meanpug.com/team/aleksandar-ciric/",
+		defaultImg: "/assets/images/team/aleksandar-ciric-headshot.jpg",
+		hoverImg: "/assets/images/team/aleksandar-ciric-headshot-flipped.png",
+	},
+	{
+		name: "Rachael Pence",
+		role: "Social Media Manager",
+		email: "rachael@meanpug.com",
+		link: "https://www.meanpug.com/team/rachael-pence/",
+		defaultImg: "/assets/images/team/Rachael-Home.png",
+		hoverImg: "/assets/images/team/Rachael-Home-illustration.png",
+	},
+	{
+		name: "Tikki",
+		role: "CPO",
+		email: "bark@meanpug.com",
+		defaultImg: "/assets/images/team/Tikki-949x1024.jpg",
+		hoverImg: "/assets/images/team/tikki_new-main-illustration.png",
+	},
+];
+---
+
+<section class="bg-yellow pt-8 pb-12 mp-team-carousel overflow-hidden">
+	<div class="mp-mobile-bounds">
+		<div class="container mx-auto border-t border-purple-900 pt-2">
+			<div class="flex justify-between items-center">
+				<strong
+					class="font-medium text-lg md:text-xl uppercase tracking-wider text-purple-900"
+					>Our Team</strong
+				>
+
+				<a
+					class="flex items-center font-bold text-sm text-purple-900 hover:text-purple transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--purple"
+					href="https://www.meanpug.com/contact-us/"
+				>
+					<Image
+						width="18"
+						height="20"
+						decoding="async"
+						src={"/assets/images/icons/ic-plus-circle-purple-900.svg"}
+						alt="plus icon"
+						class="mp-link--ic__ic"
+					/>
+
+					<span class="ml-2 md:ml-4 inline-block underline pt-1">
+						Bark At Us
+					</span>
+				</a>
+			</div>
+
+			<div
+				class="mp-emphasis-text mp-emphasis-text--bg-purple mp-emphasis-text--text-yellow mp-header mp-header--2xl md:mp-header--5xl font-bold text-purple pt-4 md:pt-8 pb-6 md:pb-12 md:pl-8 text-center md:text-left mp-leading-inner--tight"
+			>
+				<h3>Meet the</h3>
+				<h3><strong>MeanPug Pack</strong></h3>
+			</div>
+		</div>
+	</div>
+
+	<div
+		class="mp-carousel glide mp-js-cursor-container"
+		id="mp-team-carousel"
+		data-cursor-image="/assets/images/illustrations/ill-drag-paw-purple.png"
+	>
+		<div class="glide__track" data-glide-el="track">
+			<ul class="glide__slides">
+				{
+					teamMembers.map((member) => (
+						<li class="glide__slide">
+							{member.link ? (
+								<a href={member.link}>
+									<div class="relative mp-hover-swap">
+										<Image
+											width="949"
+											height="1024"
+											decoding="async"
+											src={member.defaultImg}
+											alt={member.name}
+											class="w-full mp-hover-swap__default"
+											loading="lazy"
+										/>
+										<Image
+											width="949"
+											height="1024"
+											decoding="async"
+											src={member.hoverImg}
+											alt={`${member.name} flipped`}
+											class="absolute top-0 left-0 w-full mp-hover-swap__new"
+											loading="lazy"
+										/>
+									</div>
+								</a>
+							) : (
+								<div class="relative mp-hover-swap">
+									<Image
+										width="949"
+										height="1024"
+										decoding="async"
+										src={member.defaultImg}
+										alt={member.name}
+										class="w-full mp-hover-swap__default"
+										loading="lazy"
+									/>
+									<Image
+										width="949"
+										height="1024"
+										decoding="async"
+										src={member.hoverImg}
+										alt={`${member.name} flipped`}
+										class="absolute top-0 left-0 w-full mp-hover-swap__new"
+										loading="lazy"
+									/>
+								</div>
+							)}
+							<div class="pt-4 text-purple-900 px-4">
+								{member.link ? (
+									<a href={member.link}>
+										<strong>{member.name}</strong>
+									</a>
+								) : (
+									<strong>{member.name}</strong>
+								)}
+								<p>{member.role}</p>
+
+								<div class="pt-4">
+									<span class="text-sm">{member.email}</span>
+								</div>
+							</div>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+
+	<div class="pt-8 md:pt-12 text-center">
+		<a
+			href="https://www.meanpug.com/about-us/"
+			class="mp-cta-button mp-cta-button--primary"
+		>
+			Full Team
+		</a>
+	</div>
+</section>

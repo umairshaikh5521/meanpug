@@ -1,0 +1,16 @@
+[2m14:26:57[22m [34m[types][39m Generated [2m54ms[22m
+[2m14:26:57[22m [34m[build][39m output: [34m"static"[39m
+[2m14:26:57[22m [34m[build][39m mode: [34m"static"[39m
+[2m14:26:57[22m [34m[build][39m directory: [34mD:\umair-work\side-projects\pitch-websites\mean-pug\dist\[39m
+[2m14:26:57[22m [34m[build][39m Collecting build info...
+[2m14:26:57[22m [34m[build][39m [32m✓ Completed in 72ms.[39m
+[2m14:26:57[22m [34m[build][39m Building static entrypoints...
+[31m[1m14:26:58[22m [ERROR] [vite][39m [31m✗[39m Build failed in 748ms
+[@tailwindcss/vite:generate:build] Can't resolve '/assets/css/critical.css' in 'D:\umair-work\side-projects\pitch-websites\mean-pug\src\styles'
+file: D:/umair-work/side-projects/pitch-websites/mean-pug/src/styles/global.css
+  [1mStack trace:[22m
+[2m    at finishWithoutResolve (D:\umair-work\side-projects\pitch-websites\mean-pug\node_modules\enhanced-resolve\lib\Resolver.js:587:18)
+    at D:\umair-work\side-projects\pitch-websites\mean-pug\node_modules\enhanced-resolve\lib\Resolver.js:740:5
+    at D:\umair-work\side-projects\pitch-websites\mean-pug\node_modules\enhanced-resolve\lib\Resolver.js:740:5
+    at D:\umair-work\side-projects\pitch-websites\mean-pug\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
+    at eval (eval at create (D:\umair-work\side-projects\pitch-websites\mean-pug\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)[22m

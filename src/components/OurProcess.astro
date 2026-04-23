@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+---
+
+
+<section
+	class="bg-purple pb-8 md:pb-16 overflow-hidden mp-mobile-bounds mp-offset-text-image-highlight"
+>
+	<div class="container mx-auto border-t border-yellow pt-2">
+		<div class="flex justify-between items-center">
+			<strong
+				class="font-medium text-lg md:text-xl uppercase tracking-wider text-yellow"
+				>Our Process</strong
+			>
+
+			<a
+				class="flex items-center font-bold text-sm text-yellow hover:text-white transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--white"
+				href="/resource/"
+			>
+				<Image
+					width="18"
+					height="20"
+					decoding="async"
+					src={"/assets/images/icons/ic-plus-circle-yellow.svg"}
+					alt="plus icon"
+					class="mp-link--ic__ic"
+				/>
+
+				<span class="ml-2 md:ml-4 inline-block underline pt-1">
+					Free Resources
+				</span>
+			</a>
+		</div>
+
+		<div class="pt-2 md:pt-12">
+			<div class="flex flex-col md:flex-row relative">
+				<div
+					class="w-full md:w-7/12 z-10 md:ml-4 lg:ml-12 2xl:ml-32 pt-4 md:pt-0 order-last md:order-first"
+				>
+					<div
+						class="mp-emphasis-text mp-emphasis-text--bg-yellow mp-emphasis-text--text-purple mp-header mp-header--2xl md:mp-header--4xl lg:mp-header--5xl 2xl:mp-header--6xl text-white font-bold md:tracking-wide mp-leading-inner--tight"
+					>
+						<h3>Are you ready</h3>
+						<h3><strong>to shake up </strong></h3>
+						<h3>your business?</h3>
+					</div>
+
+					<div
+						class="md:pl-12 xl:pl-24 md:pr-24 xl:pr-32 pt-4 md:pt-8 pb-8 md:pb-12 text-white text-lg"
+					>
+						<p>
+							Want to know how we do it? Take a few minutes to
+							learn about our process and let us walk you through
+							it step by step.
+						</p>
+					</div>
+
+					<div class="text-center md:text-left">
+						<a
+							href="https://www.meanpug.com/growth-partner-for-law-firms/"
+							class="mp-cta-button mp-cta-button--secondary"
+						>
+							Our Approach
+						</a>
+					</div>
+				</div>
+
+				<div class="w-full md:w-1/3 relative order-first md:order-last">
+					<Image
+						width="567"
+						height="443"
+						decoding="async"
+						src={"/assets/images/misc/Shake-Up-Your-Business.png"}
+						alt="Shake Up Your Business"
+						class="static md:absolute w-full left-0 top-0 z-0"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

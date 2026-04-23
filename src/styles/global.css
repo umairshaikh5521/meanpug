@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+    --color-yellow-primary: #FFC800;
+    --color-blue-primary: #3A3FBF;
+    --color-blue-dark: #2D2F8F;
+    --color-navy: #1A1B4B;
+
+    --font-maax: "Maax", sans-serif;
+}
+
+@layer base {
+    @font-face {
+        font-family: 'Maax';
+        src: url('/assets/fonts/MaaxRegular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Maax';
+        src: url('/assets/fonts/MaaxBold.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    body {
+        font-family: var(--font-maax);
+        @apply text-purple-900;
+    }
+}
+
+/* Include critical UI components from original theme */
+@import "./critical.css";
+@import "./main.css";

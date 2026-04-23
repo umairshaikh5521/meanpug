@@ -1,0 +1,317 @@
+---
+import { Image } from "astro:assets";
+---
+
+
+<footer class="bg-purple">
+	<div
+		class="mp-marquee mp-marquee--bapn"
+		data-per-page="1"
+		data-per-page-xl="2"
+	>
+		<ul class="mp-marquee__content">
+			<li class="mp-marquee__item mp-marquee__item--original">
+				<strong class="text-purple-900">833-MEANPUG</strong>
+			</li>
+			<li class="mp-marquee__item mp-marquee__item--original">
+				<strong class="text-purple-900">833-MEANPUG</strong>
+			</li>
+			<li class="mp-marquee__item">
+				<strong class="text-purple-900">833-MEANPUG</strong>
+			</li>
+			<li class="mp-marquee__item">
+				<strong class="text-purple-900">833-MEANPUG</strong>
+			</li>
+		</ul>
+	</div>
+
+	<div
+		class="container mx-auto border-t border-purple-900 py-4 md:py-8 md:px-3 mp-mobile-bounds"
+	>
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-x-8 md:gap-x-4"
+		>
+			<div class="col-span-1 md:col-span-2 lg:col-span-1">
+				<Image
+					width="414"
+					height="94"
+					src={"/assets/images/misc/MeanPug-Footer-Logo.png"}
+					alt="MeanPug Logo"
+					class="w-64 mx-auto md:mx-0 mt-3 md:mt-0"
+					loading="lazy"
+				/>
+
+				<div
+					class="pt-6 md:pt-16 pb-4 md:pb-8 mp-form mp-form--newsletter text-center md:text-left"
+				>
+					<strong class="text-yellow block pb-4 text-2xl md:text-base"
+						>Sign up for our newsletter and case alert system</strong
+					>
+
+					<form
+						method="post"
+						action="/"
+						class="gform_fields top_label form_sublabel_below description_below validation_below"
+					>
+						<div
+							class="gfield gfield--type-email field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible"
+						>
+							<label
+								class="gfield_label gform-field-label"
+								for="input_newsletter_email">Email</label
+							>
+							<div
+								class="ginput_container ginput_container_email"
+							>
+								<input
+									name="email"
+									id="input_newsletter_email"
+									type="email"
+									value=""
+									class="large"
+									placeholder="Email"
+									aria-invalid="false"
+								/>
+							</div>
+						</div>
+						<div class="gform-footer gform_footer top_label">
+							<input
+								type="submit"
+								class="gform_button button"
+								value="Submit"
+							/>
+						</div>
+					</form>
+				</div>
+
+				<ul class="flex justify-center md:justify-start pb-8 md:pb-0">
+					<li>
+						<a
+							href="https://www.facebook.com/meanpug"
+							target="_blank"
+							class="mp-link mp-link--ic hover:mp-link--ic--yellow transition-transform transform hover:scale-125 inline-block"
+						>
+							<Image
+								width="12"
+								height="26"
+								src={"/assets/images/icons/ic-fb.svg"}
+								alt="Facebook Icon"
+								class="mp-link--ic__ic"
+							/>
+						</a>
+					</li>
+
+					<li class="px-8">
+						<a
+							href="https://www.linkedin.com/company/meanpug-digital-agency/"
+							target="_blank"
+							class="mp-link mp-link--ic hover:mp-link--ic--yellow transition-transform transform hover:scale-125 inline-block"
+						>
+							<Image
+								width="27"
+								height="26"
+								src={"/assets/images/icons/ic-linkedin.svg"}
+								alt="LinkedIn Icon"
+								class="mp-link--ic__ic"
+							/>
+						</a>
+					</li>
+
+					<li>
+						<a
+							href="https://www.instagram.com/meanpugdigital/"
+							target="_blank"
+							class="mp-link mp-link--ic hover:mp-link--ic--yellow transition-transform transform hover:scale-125 inline-block"
+						>
+							<Image
+								width="26"
+								height="26"
+								src="/assets/images/icons/ic-ig.svg"
+								alt="Instagram Icon"
+								class="mp-link--ic__ic"
+							/>
+						</a>
+					</li>
+				</ul>
+
+				<div class="hidden md:block pt-12 text-center md:text-left">
+					<p class="text-sm text-purple-900">
+						&copy; MeanPug 2017 - 2026
+					</p>
+				</div>
+			</div>
+
+			<div class="md:col-start-3 max-md:text-center">
+				<div class="pb-6 md:pb-12">
+					<strong class="text-yellow block pb-4"
+						>Law Firm Marketing Guides</strong
+					>
+
+					<div class="mp-menu-container">
+						<ul id="menu-footer-guides" class="mp-footer-menu">
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3574"
+							>
+								<a
+									href="https://www.meanpug.com/law-firm-marketing/law-firm-marketing-basics/"
+									>2026 Law Firm Marketing Guide</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3850"
+							>
+								<a
+									href="https://www.meanpug.com/law-firm-seo/the-foundations-of-law-firm-seo/"
+									>2026 Law Firm SEO Guide</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="pb-3 md:pb-12">
+					<strong class="text-yellow block pb-4"
+						>Marketing Tools for Lawyers</strong
+					>
+
+					<div class="mp-menu-container">
+						<ul id="menu-footer-tools" class="mp-footer-menu">
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3935"
+							>
+								<a
+									href="https://www.meanpug.com/law-firm-technical-seo-check/"
+									>Law Firm Technical SEO Checker</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3956"
+							>
+								<a
+									href="https://www.meanpug.com/law-firm-web-design-grader/"
+									>Law Firm Web Design Grader</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="max-md:pt-4">
+				<div class="pb-3 md:pb-12 max-md:text-center">
+					<strong class="text-yellow block pb-4">Company</strong>
+
+					<div class="mp-menu-container">
+						<ul id="menu-footer" class="mp-footer-menu">
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"
+							>
+								<a href="https://www.meanpug.com/about-us/"
+									>About Us</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88"
+							>
+								<a href="https://www.meanpug.com/what-we-offer/"
+									>What We Offer</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1400"
+							>
+								<a
+									href="https://www.meanpug.com/what-our-clients-say/"
+									>What Our Clients Say</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type_archive menu-item-object-persona menu-item-1474"
+							>
+								<a href="https://www.meanpug.com/who-we-help/"
+									>Who We Help</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"
+							>
+								<a
+									href="https://www.meanpug.com/growth-partner-for-law-firms/"
+									>Growth Partner For Law Firms</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type_archive menu-item-object-portfolio menu-item-92"
+							>
+								<a href="https://www.meanpug.com/portfolio/"
+									>Portfolio</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2649"
+							>
+								<a href="https://www.meanpug.com/podcasts/"
+									>Podcasts</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"
+							>
+								<a href="https://www.meanpug.com/contact-us/"
+									>Contact Us</a
+								>
+							</li>
+							<li
+								class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3702"
+							>
+								<a
+									target="_blank"
+									href="https://apply.workable.com/meanpug/?lng=en"
+									>Careers</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<a
+					href="https://www.meanpug.com/privacy-policy/"
+					class="text-purple-900 text-sm hidden md:inline-block"
+					>Privacy Policy</a
+				>
+			</div>
+
+			<div class="max-md:text-center max-md:pt-4">
+				<div class="pb-8">
+					<strong class="text-yellow block pb-4">Address</strong>
+					<p class="text-white">
+						280 Madison Ave, Suite 506, New York, New York, 10016
+					</p>
+				</div>
+
+				<div class="pb-8">
+					<strong class="text-yellow block pb-4">Phone Number</strong>
+					<a href="tel:18336326784" class="text-white">
+						833-MEANPUG
+					</a>
+				</div>
+
+				<div class="pb-12">
+					<strong class="text-yellow block pb-4">Email</strong>
+					<a href="mailto:bark@meanpug.com" class="text-white">
+						bark@meanpug.com
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="block md:hidden text-center pt-4">
+			<a
+				href="https://www.meanpug.com/privacy-policy/"
+				class="text-purple-900 text-sm inline-block md:hidden"
+				>Privacy Policy</a
+			>
+			<p class="text-sm text-purple-900">&copy; MeanPug 2017 - 2026</p>
+		</div>
+	</div>
+</footer>

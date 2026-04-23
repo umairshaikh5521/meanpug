@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets";
+
+const logos = [
+    {
+        src: "/assets/images/logos/mtva_logo-01-1_white.png",
+        width: 233,
+        height: 50,
+        alt: "Mass Tort Vendor Authority Badge",
+    },
+    {
+        src: "/assets/images/logos/Forbes-Logo.png",
+        width: 332,
+        height: 88,
+        alt: "Forbes Logo",
+    },
+    {
+        src: "/assets/images/logos/Entrepeneur-Logo.png",
+        width: 600,
+        height: 118,
+        alt: "Entrepeneur Logo",
+    },
+    {
+        src: "/assets/images/logos/fastcompany.png",
+        width: 306,
+        height: 31,
+        alt: "FastCompany Executive Board Badge",
+    },
+    {
+        src: "/assets/images/logos/Marketing-For-Justice-Logo.png",
+        width: 436,
+        height: 140,
+        alt: "Marketing For Justice Logo",
+    },
+    {
+        src: "/assets/images/logos/Attorney-At-Law-Logo.png",
+        width: 644,
+        height: 104,
+        alt: "Attorney At Law Logo",
+    },
+];
+---
+<section class="bg-purple pt-6">
+    <div class="mp-mobile-bounds">
+        <div class="container mx-auto md:px-2 xl:px-0 pt-2 border-t border-white">
+            <div class="flex justify-between items-center">
+                <strong
+                    class="font-medium text-lg md:text-xl uppercase tracking-wider text-white"
+                >
+                    Featured On
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="mp-marquee pt-8 pb-3 md:pb-8" data-per-page="2" data-per-page-xl="4">
+            <ul class="mp-marquee__content flex items-center">
+                {
+                    logos.map((logo) => (
+                        <li class="mp-marquee__item mp-marquee__item--original px-12">
+                            <Image
+                                src={logo.src}
+                                width={logo.width}
+                                height={logo.height}
+                                loading="lazy"
+                                decoding="async"
+                                alt={logo.alt}
+                                class="max-w-30 md:max-w-64"
+                            />
+                        </li>
+                    ))
+                }
+
+                {
+                    logos.map((logo) => (
+                        <li class="mp-marquee__item px-12">
+                            <Image
+                                src={logo.src}
+                                width={logo.width}
+                                height={logo.height}
+                                loading="lazy"
+                                decoding="async"
+                                alt={logo.alt}
+                                class="max-w-30 md:max-w-64"
+                            />
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div class="mp-mobile-bounds">
+            <div class="container mx-auto border-b border-white pb-4 md:px-2 xl:px-0">
+            </div>
+        </div>
+    </div>
+</section>
+

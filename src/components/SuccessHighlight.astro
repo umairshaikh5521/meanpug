@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section
+    class="pb-8 md:pb-24 pt-4 overflow-hidden mp-block mp-mobile-bounds mp-text-image-highlight mp-text-image-highlight--"
+>
+    <div class="container mx-auto">
+        <div class="border-t border-white pt-2">
+            <div class="flex justify-between items-center">
+                <strong
+                    class="font-medium text-lg md:text-xl uppercase tracking-wider text-white"
+                    >833-MEANPUG</strong
+                >
+
+                <a
+                    class="flex items-center font-bold text-sm text-white hover:text-yellow transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--yellow"
+                    href="https://www.meanpug.com/contact-us/"
+                >
+                    <Image
+                        width="18"
+                        height="20"
+                        decoding="async"
+                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2020'%3E%3C/svg%3E"
+                        alt="plus icon"
+                        class="mp-link--ic__ic"
+                        src="/assets/images/icons/ic-plus-circle-white.svg"
+                    /><noscript
+                        ><Image
+                            width="18"
+                            height="20"
+                            decoding="async"
+                            src={"/assets/images/icons/ic-plus-circle-white.svg"}
+                            alt="plus icon"
+                            class="mp-link--ic__ic"
+                        /></noscript
+                    >
+
+                    <span class="ml-2 md:ml-4 inline-block underline pt-1">
+                        Speak To Pug
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="relative mt-12">
+            <Image
+                width="1116"
+                height="742"
+                decoding="async"
+                src={"/assets/images/misc/Handshake.jpg"}
+                alt="Two people shaking hands, one wearing a yellow shirt and the other a blue shirt, with a solid yellow background."
+                class="absolute left-0 top-0 mt-8 md:mt-16 ml-8 w-full md:w-1/2 xl:w-1/3 z-0"
+            />
+
+            <div class="grid grid-cols-4 gap-y-32 md:gap-y-16 relative z-10">
+                <div
+                    class="col-start-1 md:col-start-2 col-span-4 md:col-span-3"
+                >
+                    <div
+                        class="mp-emphasis-text mp-emphasis-text--bg-yellow mp-emphasis-text--text-purple-900 mp-header mp-header--2xl md:mp-header--4xl lg:mp-header--5xl xl:mp-header--6xl text-white font-bold mp-text-image-highlight__header"
+                    >
+                        <h3>
+                            <span
+                                class="ez-toc-section"
+                                id="your-success-is-our-success"></span>Your
+                            Success<br />
+                            Is Our<br />
+                            <strong>Success.</strong><span
+                                class="ez-toc-section-end"></span>
+                        </h3>
+                    </div>
+                </div>
+
+                <div
+                    class="col-start-1 md:col-start-3 col-span-4 md:col-span-2 text-xl leading-tight pt-4 md:pt-0 mp-core-style mp-text-image-highlight__caption"
+                >
+                    <p>
+                        <strong>5-10x average return</strong> per dollar spent
+                    </p>
+                    <p>on digital advertising with MeanPug.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

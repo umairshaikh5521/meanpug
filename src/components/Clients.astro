@@ -1,0 +1,235 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="bg-purple pt-8 md:px-3 xl:px-0 mp-clients overflow-hidden">
+    <div class="mp-mobile-bounds">
+        <div class="container mx-auto border-t border-yellow pt-2">
+            <div class="flex justify-between items-center">
+                <strong
+                    class="font-medium text-lg md:text-xl uppercase tracking-wider text-yellow"
+                    >Success Story</strong
+                >
+
+                <a
+                    class="flex items-center font-bold text-sm text-yellow hover:text-white transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--white"
+                    href="https://www.meanpug.com/portfolio/"
+                >
+                    <Image
+                        src={"/assets/images/icons/ic-plus-circle-yellow.svg"}
+                        width={18}
+                        height={20}
+                        loading="lazy"
+                        decoding="async"
+                        alt="plus icon"
+                        class="mp-link--ic__ic"
+                    />
+
+                    <span class="ml-2 md:ml-4 inline-block underline pt-1">
+                        More Case Studies
+                    </span>
+                </a>
+            </div>
+
+            <div class="relative mt-8 md:mt-12 pb-12">
+                <div
+                    class="static md:absolute left-0 top-0 ml-0 md:ml-8 mt-0 md:mt-4 z-0 w-full md:w-1/2 lg:w-1/3"
+                >
+                    <Image
+                        src={"/assets/images/misc/tara_new.png"}
+                        width={792}
+                        height={612}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        alt="Tara Nealon Picture"
+                        class="w-full"
+                    />
+                </div>
+
+                <div class="grid grid-cols-3 relative z-10">
+                    <div
+                        class="col-start-1 md:col-start-2 col-span-3 md:col-span-2 flex flex-col md:flex-row items-end md:items-center justify-between md:h-auto"
+                    >
+                        <div
+                            class="bg-yellow shadow-2xl pl-3 py-2 pr-8 w-full md:w-1/2 transform translate-x-7 mp-clients__reviewer"
+                        >
+                            <strong class="font-bold text-sm text-purple"
+                                >Tara Nealon</strong
+                            >
+                            <p
+                                class="text-purple tracking-widest text-sm uppercase"
+                            >
+                                attorney
+                            </p>
+                        </div>
+
+                        <Image
+                            src={"/assets/images/logos/Shulman-Hill-transparent-logo.png"}
+                            width={198}
+                            height={38}
+                            loading="lazy"
+                            decoding="async"
+                            sizes="128px"
+                            class="w-32 mx-auto md:mx-0 mt-4 md:mt-0"
+                            alt="Shulman & Hill"
+                        />
+                    </div>
+
+                    <div
+                        class="col-start-1 lg:col-start-2 col-span-3 lg:col-span-2 mt-4 md:mt-16 lg:mt-0"
+                    >
+                        <div class="md:px-24 xl:px-32 text-center md:text-left">
+                            <div
+                                class="pt-6 pb-12 mp-emphasis-text mp-emphasis-text--text-yellow mp-header mp-header--xl md:mp-header--3xl lg:mp-header--4xl font-bold text-white leading-tighter"
+                            >
+                                <p>
+                                    &#8220;We&#8217;re very happy with
+                                    everything they&#8217;ve created for us and
+                                    can&#8217;t recommend them enough!&#8221;
+                                </p>
+                            </div>
+
+                            <a
+                                href="https://www.meanpug.com/portfolio/shulman-hill/"
+                                class="mp-cta-button mp-cta-button--secondary"
+                            >
+                                Read Full Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mp-mobile-bounds">
+        <div class="container mx-auto border-t border-white pt-2">
+            <div class="flex justify-between items-center">
+                <strong
+                    class="font-medium text-lg md:text-xl uppercase tracking-wider text-white"
+                    >Our Clients</strong
+                >
+
+                <a
+                    class="flex items-center font-bold text-sm text-white hover:text-yellow transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--yellow"
+                    href="/portfolio/"
+                >
+                    <Image
+                        src={"/assets/images/icons/ic-plus-circle-white.svg"}
+                        width={18}
+                        height={20}
+                        loading="lazy"
+                        decoding="async"
+                        alt="plus icon"
+                        class="mp-link--ic__ic"
+                    />
+
+                    <span class="ml-2 md:ml-4 inline-block underline pt-1">
+                        More Projects
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-8 md:py-16">
+        <div class="mp-marquee" data-per-page="2" data-per-page-xl="4">
+            <ul class="mp-marquee__content items-center">
+                <li
+                    class="mp-marquee__item mp-marquee__item--original px-8 md:px-0"
+                >
+                    <Image
+                        src={"/assets/images/logos/logo_main_white_knockout.png"}
+                        width={320}
+                        height={86}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Pinkham & Associates, APLC"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+                <li
+                    class="mp-marquee__item mp-marquee__item--original px-8 md:px-0"
+                >
+                    <Image
+                        src={"/assets/images/logos/EP-transparent-logo.png"}
+                        width={245}
+                        height={44}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Edwards Pottinger"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+                <li
+                    class="mp-marquee__item mp-marquee__item--original px-8 md:px-0"
+                >
+                    <Image
+                        src={"/assets/images/logos/Milberg-transparent.png"}
+                        width={131}
+                        height={35}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Milberg"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+                <li
+                    class="mp-marquee__item mp-marquee__item--original px-8 md:px-0"
+                >
+                    <Image
+                        src={"/assets/images/logos/Shulman-Hill-transparent-logo.png"}
+                        width={198}
+                        height={38}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Shulman & Hill"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+
+                <li class="mp-marquee__item px-8 md:px-0">
+                    <Image
+                        src={"/assets/images/logos/logo_main_white_knockout.png"}
+                        width={320}
+                        height={86}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Pinkham & Associates, APLC"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+                <li class="mp-marquee__item px-8 md:px-0">
+                    <Image
+                        src={"/assets/images/logos/EP-transparent-logo.png"}
+                        width={245}
+                        height={44}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Edwards Pottinger"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+                <li class="mp-marquee__item px-8 md:px-0">
+                    <Image
+                        src={"/assets/images/logos/Milberg-transparent.png"}
+                        width={131}
+                        height={35}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="160px"
+                        alt="Milberg"
+                        class="max-w-40 mx-auto"
+                    />
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
