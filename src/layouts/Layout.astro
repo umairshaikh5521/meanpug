@@ -62,25 +62,5 @@ const ogImageUrl = new URL(ogImage, siteBase).toString();
 		<script src="/assets/js/jquery-migrate.min.js" is:inline defer></script>
 		<script src="/assets/js/main.js" is:inline defer></script>
 		<NoticeModal />
-		<script is:inline>
-			(function () {
-				const STORAGE_KEY = 'mp_last_visit_notify';
-				const ONE_WEEK = 7 * 24 * 60 * 60 * 1000;
-				const now = Date.now();
-				const last = localStorage.getItem(STORAGE_KEY);
-
-				if (!last || now - parseInt(last, 10) > ONE_WEEK) {
-					fetch('/api/notify', {
-						method: 'POST',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ page: window.location.pathname + window.location.search }),
-					})
-						.then(function (res) {
-							if (res.ok) localStorage.setItem(STORAGE_KEY, String(now));
-						})
-						.catch(function () {});
-				}
-			})();
-		</script>
 	</body>
 </html>
