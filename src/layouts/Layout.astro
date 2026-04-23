@@ -4,12 +4,17 @@ import "../styles/global.css";
 interface Props {
 	title?: string;
 	description?: string;
+	ogImage?: string;
 }
 
 const {
 	title = "MeanPug | Award-Winning Digital Agency",
-	description = "MeanPug is a full-service digital agency built for growth.",
+	description = "MeanPug is a full-service digital agencyfor Law Firms.",
+	ogImage = "/og-image.png",
 } = Astro.props;
+
+const siteBase = Astro.site ?? Astro.url;
+const ogImageUrl = new URL(ogImage, siteBase).toString();
 ---
 
 <!doctype html>
@@ -17,14 +22,25 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
 		<link
-			rel="icon"
-			type="image/png"
-			href="/assets/images/logos/favicon-100x100.png"
+			rel="apple-touch-icon"
+			href="/assets/images/favicons/cropped-meanpug-300x300.png"
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={Astro.url.href} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	</head>
