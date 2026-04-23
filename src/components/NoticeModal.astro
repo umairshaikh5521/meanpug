@@ -6,9 +6,12 @@
 				<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FFC800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		</div> -->
-		<h2 id="mp-modal-title" class="mp-modal__title">Concept Rebuild</h2>
+		<h2 id="mp-modal-title" class="mp-modal__title">Demo Notice</h2>
 		<p class="mp-modal__body">
-			This is an <strong>unofficial concept rebuild</strong> of the MeanPug website. I migrated the original WordPress design to <strong>Astro</strong> on my own initiative to demonstrate modern frontend skills — faster performance, clean architecture, and a component-driven workflow. Built as part of a job application to MeanPug.
+			This project was recreated in Astro by <strong>Umair</strong> to showcase implementation skills. Not an official MeanPug product.
+		</p>
+		<p class="mp-modal__body mp-modal__body--small">
+			<a href="https://umairsk.vercel.app/" target="_blank" rel="noopener noreferrer" class="mp-modal__link">View Umair's portfolio &rarr;</a>
 		</p>
 		<div class="mp-modal__actions">
 			<button class="mp-modal__btn mp-modal__btn--primary">Explore the concept</button>
@@ -85,6 +88,22 @@
 	.mp-modal__body strong {
 		color: #3a3fbf;
 	}
+	.mp-modal__body--small {
+		font-size: 0.9rem;
+		margin-top: -0.5rem;
+		margin-bottom: 1.5rem;
+	}
+	.mp-modal__link {
+		color: #3a3fbf;
+		font-weight: 600;
+		text-decoration: none;
+		border-bottom: 2px solid #c7d2fe;
+		transition: border-color 0.2s ease, color 0.2s ease;
+	}
+	.mp-modal__link:hover {
+		color: #1a1b4b;
+		border-bottom-color: #3a3fbf;
+	}
 	.mp-modal__actions {
 		display: flex;
 		justify-content: center;
@@ -110,6 +129,10 @@
 	.mp-modal__btn--primary:hover {
 		box-shadow: 0 4px 14px rgba(255, 200, 0, 0.45);
 	}
+	.mp-modal-scroll-lock {
+		overflow: hidden;
+		touch-action: none;
+	}
 </style>
 
 <script is:inline>
@@ -123,10 +146,12 @@
 		function open() {
 			overlay.setAttribute('aria-hidden', 'false');
 			overlay.classList.add('is-open');
+			document.body.classList.add('mp-modal-scroll-lock');
 		}
 		function close() {
 			overlay.setAttribute('aria-hidden', 'true');
 			overlay.classList.remove('is-open');
+			document.body.classList.remove('mp-modal-scroll-lock');
 			localStorage.setItem(KEY, '1');
 		}
 
