@@ -1,6 +1,6 @@
-import { c as createComponent, $ as $$Image } from './_astro_assets_CMSCggCp.mjs';
+import { c as createComponent, $ as $$Image } from './_astro_assets_DXXWTnnN.mjs';
 import 'piccolore';
-import { c as createRenderInstruction, r as renderTemplate, m as maybeRenderHead, b as renderComponent, d as renderSlot, e as renderHead, f as addAttribute } from './entrypoint_CnPpdqGC.mjs';
+import { c as createRenderInstruction, r as renderTemplate, m as maybeRenderHead, b as renderComponent, d as renderSlot, e as renderHead, f as addAttribute } from './entrypoint_LwZADX9S.mjs';
 import 'clsx';
 
 async function renderScript(result, id) {
@@ -24,7 +24,11 @@ var _a$1;
 const $$NoticeModal = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$NoticeModal;
-  return renderTemplate(_a$1 || (_a$1 = __template$1(["", `<div id="mp-notice-modal" class="mp-modal-overlay" aria-hidden="true" data-astro-cid-ijsyrlcl> <div class="mp-modal" role="dialog" aria-modal="true" aria-labelledby="mp-modal-title" data-astro-cid-ijsyrlcl> <button class="mp-modal__close" aria-label="Close notice" data-astro-cid-ijsyrlcl>&times;</button> <div class="mp-modal__icon" data-astro-cid-ijsyrlcl> <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-ijsyrlcl> <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FFC800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ijsyrlcl></path> </svg> </div> <h2 id="mp-modal-title" class="mp-modal__title" data-astro-cid-ijsyrlcl>Concept Rebuild</h2> <p class="mp-modal__body" data-astro-cid-ijsyrlcl>
+  return renderTemplate(_a$1 || (_a$1 = __template$1(["", `<div id="mp-notice-modal" class="mp-modal-overlay" aria-hidden="true" data-astro-cid-ijsyrlcl> <div class="mp-modal" role="dialog" aria-modal="true" aria-labelledby="mp-modal-title" data-astro-cid-ijsyrlcl> <button class="mp-modal__close" aria-label="Close notice" data-astro-cid-ijsyrlcl>&times;</button> <!-- <div class="mp-modal__icon">
+			<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FFC800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div> --> <h2 id="mp-modal-title" class="mp-modal__title" data-astro-cid-ijsyrlcl>Concept Rebuild</h2> <p class="mp-modal__body" data-astro-cid-ijsyrlcl>
 This is an <strong data-astro-cid-ijsyrlcl>unofficial concept rebuild</strong> of the MeanPug website. I migrated the original WordPress design to <strong data-astro-cid-ijsyrlcl>Astro</strong> on my own initiative to demonstrate modern frontend skills — faster performance, clean architecture, and a component-driven workflow. Built as part of a job application to MeanPug.
 </p> <div class="mp-modal__actions" data-astro-cid-ijsyrlcl> <button class="mp-modal__btn mp-modal__btn--primary" data-astro-cid-ijsyrlcl>Explore the concept</button> </div> </div> </div>  <script>
 	(function () {

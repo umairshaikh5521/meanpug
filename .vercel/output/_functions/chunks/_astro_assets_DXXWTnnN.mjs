@@ -1,4 +1,4 @@
-import { t as typeHandlers, g as types, A as AstroError, N as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, a as isRemoteAllowed, R as RemoteImageNotAllowed, I as InvalidComponentArgs, j as joinPaths, E as ExpectedImage, i as isRemotePath, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, h as IncompatibleDescriptorOptions, k as UnsupportedImageConversion, l as InvalidImageService, n as ExpectedImageOptions, o as ExpectedNotESMImage, p as ImageMissingAlt, m as maybeRenderHead, f as addAttribute, s as spreadAttributes, r as renderTemplate, q as FontFamilyNotFound, u as unescapeHTML } from './entrypoint_CnPpdqGC.mjs';
+import { t as typeHandlers, g as types, A as AstroError, N as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, a as isRemoteAllowed, R as RemoteImageNotAllowed, I as InvalidComponentArgs, j as joinPaths, E as ExpectedImage, i as isRemotePath, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, h as IncompatibleDescriptorOptions, k as UnsupportedImageConversion, l as InvalidImageService, n as ExpectedImageOptions, o as ExpectedNotESMImage, p as ImageMissingAlt, m as maybeRenderHead, f as addAttribute, s as spreadAttributes, r as renderTemplate, q as FontFamilyNotFound, u as unescapeHTML } from './entrypoint_LwZADX9S.mjs';
 import * as mime from 'mrmime';
 import 'clsx';
 import 'piccolore';
@@ -557,7 +557,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_BCS-A0-4.mjs'
+      './sharp_1S2mhkkd.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;

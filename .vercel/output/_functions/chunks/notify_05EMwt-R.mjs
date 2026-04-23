@@ -1,58 +1,33 @@
-import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
 
-export const prerender = false;
-
-interface LocationData {
-	city?: string;
-	region?: string;
-	country_name?: string;
-	latitude?: number;
-	longitude?: number;
-	org?: string;
+const __vite_import_meta_env__ = {"ASSETS_PREFIX": undefined, "BASE_URL": "/", "DEV": false, "MODE": "production", "PROD": true, "SITE": "https://meanpug-astro.vercel.app", "SSR": true};
+const prerender = false;
+function getEnv(name) {
+  return Object.assign(__vite_import_meta_env__, { SMTP_HOST: "smtp.gmail.com", SMTP_PORT: "587", SMTP_SECURE: "false", SMTP_USER: "umairshaikh5521@gmail.com", SMTP_PASS: "iixkkshewkofldoe", SMTP_FROM: "MeanPug <noreply@corporatewebsite.com>", OS: "Windows_NT" })[name] ?? process.env[name];
 }
-
-function getEnv(name: string): string | undefined {
-	return (import.meta.env as Record<string, string | undefined>)[name] ?? process.env[name];
+async function getLocation(ip) {
+  try {
+    const cleanIp = ip.split(",")[0].trim();
+    if (!cleanIp || cleanIp === "127.0.0.1" || cleanIp.startsWith("::")) {
+      return { city: "Localhost", region: "N/A", country_name: "N/A" };
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3e3);
+    const res = await fetch(`https://ipapi.co/${cleanIp}/json/`, { signal: controller.signal });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
-
-async function getLocation(ip: string): Promise<LocationData | null> {
-	try {
-		const cleanIp = ip.split(',')[0].trim();
-		if (!cleanIp || cleanIp === '127.0.0.1' || cleanIp.startsWith('::')) {
-			return { city: 'Localhost', region: 'N/A', country_name: 'N/A' };
-		}
-		const controller = new AbortController();
-		const timer = setTimeout(() => controller.abort(), 3000);
-		const res = await fetch(`https://ipapi.co/${cleanIp}/json/`, { signal: controller.signal });
-		clearTimeout(timer);
-		if (!res.ok) return null;
-		return (await res.json()) as LocationData;
-	} catch {
-		return null;
-	}
-}
-
-function buildHtmlEmail(data: {
-	time: string;
-	page: string;
-	ua: string;
-	ip: string;
-	location: LocationData | null;
-}) {
-	const loc = data.location;
-	const locStr = loc
-		? `${loc.city ?? 'Unknown'}, ${loc.region ?? 'Unknown'} — ${loc.country_name ?? 'Unknown'}`
-		: 'Could not determine';
-	const coords = loc?.latitude && loc?.longitude
-		? `${loc.latitude}, ${loc.longitude}`
-		: 'N/A';
-	const isp = loc?.org ?? 'N/A';
-	const mapLink = loc?.latitude && loc?.longitude
-		? `https://www.google.com/maps?q=${loc.latitude},${loc.longitude}`
-		: null;
-
-	return `<!DOCTYPE html>
+function buildHtmlEmail(data) {
+  const loc = data.location;
+  const locStr = loc ? `${loc.city ?? "Unknown"}, ${loc.region ?? "Unknown"} — ${loc.country_name ?? "Unknown"}` : "Could not determine";
+  const coords = loc?.latitude && loc?.longitude ? `${loc.latitude}, ${loc.longitude}` : "N/A";
+  const isp = loc?.org ?? "N/A";
+  const mapLink = loc?.latitude && loc?.longitude ? `https://www.google.com/maps?q=${loc.latitude},${loc.longitude}` : null;
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -99,7 +74,7 @@ body{margin:0;padding:0;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 100
 </div>
 <div class="section-title">Geolocation</div>
 <div class="card" style="background:linear-gradient(135deg,#eff6ff 0%,#fff1f2 100%);border:1px solid #dbeafe;">
-<div class="location-row"><div class="icon icon-pin">&#128205;</div><div><div class="loc-label">Location</div><div class="loc-value">${locStr}</div>${mapLink ? `<a class="map-btn" href="${mapLink}" target="_blank">View on Map &rarr;</a>` : ''}</div></div>
+<div class="location-row"><div class="icon icon-pin">&#128205;</div><div><div class="loc-label">Location</div><div class="loc-value">${locStr}</div>${mapLink ? `<a class="map-btn" href="${mapLink}" target="_blank">View on Map &rarr;</a>` : ""}</div></div>
 <div class="location-row"><div class="icon icon-coords">&#127758;</div><div><div class="loc-label">Coordinates</div><div class="loc-value">${coords}</div></div></div>
 <div class="location-row"><div class="icon icon-isp">&#127972;</div><div><div class="loc-label">ISP / Organization</div><div class="loc-value">${isp}</div></div></div>
 </div>
@@ -117,81 +92,82 @@ body{margin:0;padding:0;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 100
 </body>
 </html>`;
 }
+const POST = async ({ request }) => {
+  try {
+    const host = getEnv("SMTP_HOST");
+    const port = Number(getEnv("SMTP_PORT") || 587);
+    const secure = getEnv("SMTP_SECURE") === "true";
+    const user = getEnv("SMTP_USER");
+    const pass = getEnv("SMTP_PASS");
+    const from = getEnv("SMTP_FROM") || user;
+    if (!host || !user || !pass) {
+      return new Response(
+        JSON.stringify({ error: "Missing SMTP configuration" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+    const forwarded = request.headers.get("x-forwarded-for");
+    const ip = forwarded ? forwarded.split(",")[0].trim() : "Unknown";
+    const ua = request.headers.get("user-agent") || "Unknown";
+    const referer = request.headers.get("referer") || "Direct / Unknown";
+    let page = "/";
+    try {
+      const body = await request.json();
+      page = body.page || "/";
+    } catch {
+    }
+    const location = await getLocation(ip);
+    const timeStr = (/* @__PURE__ */ new Date()).toLocaleString("en-US", {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short"
+    });
+    const textBody = `New visitor on MeanPug
 
-export const POST: APIRoute = async ({ request }) => {
-	try {
-		const host = getEnv('SMTP_HOST');
-		const port = Number(getEnv('SMTP_PORT') || 587);
-		const secure = getEnv('SMTP_SECURE') === 'true';
-		const user = getEnv('SMTP_USER');
-		const pass = getEnv('SMTP_PASS');
-		const from = getEnv('SMTP_FROM') || user;
-
-		if (!host || !user || !pass) {
-			return new Response(
-				JSON.stringify({ error: 'Missing SMTP configuration' }),
-				{ status: 500, headers: { 'Content-Type': 'application/json' } }
-			);
-		}
-
-		const forwarded = request.headers.get('x-forwarded-for');
-		const ip = forwarded ? forwarded.split(',')[0].trim() : 'Unknown';
-		const ua = request.headers.get('user-agent') || 'Unknown';
-		const referer = request.headers.get('referer') || 'Direct / Unknown';
-
-		let page = '/';
-		try {
-			const body = await request.json();
-			page = body.page || '/';
-		} catch { /* ignore empty / invalid body */ }
-
-		const location = await getLocation(ip);
-
-		const timeStr = new Date().toLocaleString('en-US', {
-			weekday: 'short',
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-			hour: '2-digit',
-			minute: '2-digit',
-			second: '2-digit',
-			timeZoneName: 'short',
-		});
-
-		const textBody =
-			`New visitor on MeanPug\n\n` +
-			`Page: ${page}\n` +
-			`Time: ${timeStr}\n` +
-			`IP: ${ip}\n` +
-			`Location: ${location ? `${location.city}, ${location.region}, ${location.country_name}` : 'Unknown'}\n` +
-			`ISP: ${location?.org || 'N/A'}\n` +
-			`User-Agent: ${ua}\n` +
-			`Referer: ${referer}`;
-
-		const transporter = nodemailer.createTransport({
-			host,
-			port,
-			secure,
-			auth: { user, pass },
-		});
-
-		await transporter.sendMail({
-			from,
-			to: user,
-			subject: 'New visitor on MeanPug website',
-			text: textBody,
-			html: buildHtmlEmail({ time: timeStr, page, ua, ip, location }),
-		});
-
-		return new Response(
-			JSON.stringify({ success: true }),
-			{ status: 200, headers: { 'Content-Type': 'application/json' } }
-		);
-	} catch (err: any) {
-		console.error('Unhandled error in notify handler:', err);
-		return new Response(
-			JSON.stringify({ error: 'Internal server error', details: err?.message || String(err) }),
-			{ status: 500, headers: { 'Content-Type': 'application/json' } }
-		);
-	}
+Page: ${page}
+Time: ${timeStr}
+IP: ${ip}
+Location: ${location ? `${location.city}, ${location.region}, ${location.country_name}` : "Unknown"}
+ISP: ${location?.org || "N/A"}
+User-Agent: ${ua}
+Referer: ${referer}`;
+    const transporter = nodemailer.createTransport({
+      host,
+      port,
+      secure,
+      auth: { user, pass }
+    });
+    await transporter.sendMail({
+      from,
+      to: user,
+      subject: "New visitor on MeanPug website",
+      text: textBody,
+      html: buildHtmlEmail({ time: timeStr, page, ua, ip, location })
+    });
+    return new Response(
+      JSON.stringify({ success: true }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
+  } catch (err) {
+    console.error("Unhandled error in notify handler:", err);
+    return new Response(
+      JSON.stringify({ error: "Internal server error", details: err?.message || String(err) }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
+  }
 };
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+	__proto__: null,
+	POST,
+	prerender
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
