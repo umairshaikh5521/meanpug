@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { getAllPostSlugs, getPostBySlug, formatDate, getFeaturedImageUrl, stripHtml } from "../../lib/wordpress";
+import { getAllPostSlugs, getPostBySlug, getPosts, formatDate, getFeaturedImageUrl, stripHtml } from "../../lib/wordpress";
 
 export async function getStaticPaths() {
     const slugs = await getAllPostSlugs();
@@ -16,356 +16,323 @@ if (!post) {
     return Astro.redirect("/blog/");
 }
 
-const image = getFeaturedImageUrl(post, "large");
-const imageAlt = post._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || post.title.rendered;
+const image = getFeaturedImageUrl(post, "full");
+const imageAlt = post._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || stripHtml(post.title.rendered);
 const author = post._embedded?.author?.[0];
-const categories = post._embedded?.["wp:term"]?.[0] ?? [];
-const plainExcerpt = stripHtml(post.excerpt.rendered).slice(0, 160);
+const categories = (post._embedded?.["wp:term"] ?? []).flat().filter((t) => t.name !== "Uncategorized");
+const tags = post._embedded?.["wp:term"]?.[1] ?? [];
+const allTerms = [...categories, ...tags];
+const plainExcerpt = stripHtml(post.excerpt.rendered).slice(0, 300);
+const postDate = formatDate(post.date);
+
+// Fetch popular / recent posts for sidebar carousel (exclude current post)
+const recentPosts = (await getPosts({ perPage: 4 })).filter((p) => p.slug !== slug).slice(0, 3);
 ---
 
 <Layout
     title={`${stripHtml(post.title.rendered)} | MeanPug Blog`}
-    description={plainExcerpt}
+    description={plainExcerpt.slice(0, 160)}
     ogImage={image ?? "/og-image.png"}
 >
     <Header />
 
-    <main id="main-content">
-        <!-- Post header -->
-        <header class="post-hero">
-            <div class="post-hero__inner">
-                <!-- Breadcrumb -->
-                <nav class="post-breadcrumb" aria-label="Breadcrumb">
-                    <a href="/">Home</a>
-                    <span aria-hidden="true">›</span>
-                    <a href="/blog/">Blog</a>
-                    <span aria-hidden="true">›</span>
-                    <span set:html={post.title.rendered} />
-                </nav>
+    <main id="main" class="site-main bg-yellow">
+        <header class="container mx-auto md:pt-8">
+            <!-- Featured Image -->
+            {image && (
+                <div class="overflow-hidden">
+                    <img
+                        width="2560"
+                        height="960"
+                        alt={imageAlt}
+                        fetchpriority="high"
+                        src={image}
+                        class="w-full mp-post-header-image max-h-[40rem] object-cover object-center wp-post-image"
+                        decoding="async"
+                    />
+                </div>
+            )}
 
-                <!-- Categories -->
-                {categories.length > 0 && (
-                    <div class="post-categories">
-                        {categories.slice(0, 3).map((cat) => (
-                            <span class="post-category">{cat.name}</span>
-                        ))}
-                    </div>
-                )}
+            <!-- Breadcrumbs -->
+            <div class="pt-4 md:pt-8 pb-4 md:pb-0 mp-breadcrumbs mp-mobile-bounds">
+                <p id="breadcrumbs">
+                    <span>
+                        <span><a href="/">Home</a></span>
+                        &gt;
+                        <span><a href="/blog/">Drawing Board</a></span>
+                        &gt;
+                        <span class="breadcrumb_last" aria-current="page">
+                            <strong set:html={post.title.rendered} />
+                        </span>
+                    </span>
+                </p>
+            </div>
 
-                <!-- Title -->
-                <h1 class="post-title" set:html={post.title.rendered} />
-
-                <!-- Meta -->
-                <div class="post-meta">
-                    {author && (
-                        <div class="post-author">
-                            {author.avatar_urls?.["48"] && (
-                                <img
-                                    src={author.avatar_urls["48"]}
-                                    alt={author.name}
-                                    class="post-author__avatar"
-                                    width="40"
-                                    height="40"
-                                />
-                            )}
-                            <span class="post-author__name">By {author.name}</span>
-                        </div>
+            <!-- Title / Excerpt / Author hero section -->
+            <div class="border-t-3 border-b-3 border-purple py-6 md:my-6 md:flex mp-mobile-bounds">
+                <div class="md:w-1/3">
+                    <h1 class="text-purple mp-header--3xl font-bold" set:html={post.title.rendered} />
+                    {allTerms.length > 0 && (
+                        <ul class="pt-2 md:pt-8 flex flex-wrap">
+                            {allTerms.slice(0, 5).map((term) => (
+                                <li class="pr-4 text-sm text-purple underline font-bold">
+                                    {term.name}
+                                </li>
+                            ))}
+                        </ul>
                     )}
-                    <time class="post-date" datetime={post.date}>
-                        {formatDate(post.date)}
-                    </time>
+                </div>
+                <div class="md:w-2/3 md:px-16">
+                    <div class="text-purple-900 py-3 md:py-0">
+                        <p>{plainExcerpt}</p>
+                    </div>
+                    <div class="flex justify-between items-center text-sm text-purple pt-12">
+                        {author && (
+                            <a href={`/team/`}>
+                                <strong>by {author.name}</strong>
+                            </a>
+                        )}
+                        <strong>{postDate}</strong>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Featured image -->
-        {image && (
-            <div class="post-featured-image">
-                <div class="post-featured-image__inner">
-                    <img
-                        src={image}
-                        alt={imageAlt}
-                        class="post-featured-image__img"
-                        loading="eager"
-                        decoding="async"
-                    />
-                </div>
-            </div>
-        )}
+        <!-- Content + Sidebar -->
+        <div class="flex flex-col md:flex-row container mx-auto py-6 md:py-12">
+            <!-- Sidebar -->
+            <aside class="w-full md:w-1/3 xl:w-1/4 pr-0 md:pr-6 xl:pr-12 order-last md:order-first">
+                <aside id="secondary" class="widget-area">
+                    <!-- Marketing Services CTA Widget -->
+                    <section class="widget widget_mp_page_link_widget">
+                        <div class="pl-4 lg:pl-8 pr-3 lg:pr-12 py-8 bg-purple relative">
+                            <video
+                                class="absolute left-0 top-0 w-full h-full z-0 object-cover object-center"
+                                autoplay
+                                loop
+                                muted
+                                playsinline
+                            >
+                                <source
+                                    src="https://media-v2.meanpug.com/wp-content/uploads/2021/09/Integration-Matters-Tetris-Video-1.mp4"
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="relative z-10">
+                                <h2 class="text-purple-900 font-bold text-xl">Our Marketing Services</h2>
+                                <hr class="w-16 my-3 border-2 border-purple-900" />
+                                <div>
+                                    <div class="mp-header mp-header--xl text-purple-900">
+                                        <p>All Marketing Solutions Under One Roof</p>
+                                    </div>
+                                    <div class="flex items-center justify-between pt-4">
+                                        <a href="/what-we-offer/" class="mp-play-button">
+                                            <span>Play</span>
+                                        </a>
+                                        <a
+                                            class="flex items-center font-bold text-sm text-purple-900 hover:text-purple transition-transform transform hover:scale-110 mp-link mp-link--ic hover:mp-link--ic--purple"
+                                            href="/contact-us/"
+                                        >
+                                            <img
+                                                alt="plus icon"
+                                                src="/assets/images/icons/ic-plus-circle-purple-900.svg"
+                                                class="mp-link--ic__ic"
+                                            />
+                                            <span class="ml-2 md:ml-4 inline-block underline pt-1">
+                                                Chat Now
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-        <!-- Content -->
-        <article class="post-content-section">
-            <div class="post-content-inner">
-                <div class="post-content wp-content" set:html={post.content.rendered} />
+                    <!-- Popular Posts Carousel Widget -->
+                    {recentPosts.length > 0 && (
+                        <section id="mp_post_carousel_widget-2" class="widget widget_mp_post_carousel_widget">
+                            <div class="pt-8 pb-4 lg:pb-0 overflow-hidden" id="mp-post-carousel-widget">
+                                <div class="flex justify-between items-center px-2 md:px-0">
+                                    <h2 class="text-xl font-bold text-purple-900">Popular Posts</h2>
+                                    <div class="flex items-center">
+                                        <img
+                                            alt="Left Caret Icon"
+                                            src="/assets/images/icons/ic-caret-left-purple-dark.svg"
+                                            class="h-3 cursor-pointer mp-carousel-btn--prev"
+                                        />
+                                        <img
+                                            alt="Right Caret Icon"
+                                            src="/assets/images/icons/ic-caret-right-purple-dark.svg"
+                                            class="h-3 ml-6 cursor-pointer mp-carousel-btn--next"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="pt-2">
+                                    <div id="mp-post-carousel-widget-carousel" class="glide">
+                                        <div class="glide__track" data-glide-el="track">
+                                            <ul class="glide__slides">
+                                                {recentPosts.map((rPost) => {
+                                                    const rImage = getFeaturedImageUrl(rPost, "medium") || "/assets/images/logos/MeanPug-Logo.png";
+                                                    const rAlt = rPost._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || stripHtml(rPost.title.rendered);
+                                                    return (
+                                                        <li class="glide__slide">
+                                                            <div class="mp-service">
+                                                                <img
+                                                                    width="300"
+                                                                    height="113"
+                                                                    alt={rAlt}
+                                                                    src={rImage}
+                                                                    class="w-full wp-post-image"
+                                                                    loading="lazy"
+                                                                    decoding="async"
+                                                                />
+                                                                <a href={`/blog/${rPost.slug}/`}>
+                                                                    <strong class="pt-2 block text-lg text-purple px-2 md:px-0" set:html={rPost.title.rendered} />
+                                                                </a>
+                                                                <div class="pt-2 md:pt-4 px-2 md:px-0">
+                                                                    <a
+                                                                        href={`/blog/${rPost.slug}/`}
+                                                                        class="text-purple-900 hover:text-purple mp-link mp-link--caret flex items-center justify-end text-xs font-bold"
+                                                                        title={stripHtml(rPost.title.rendered)}
+                                                                    >
+                                                                        <span class="underline">Read More</span>
+                                                                        <img
+                                                                            alt="right caret icon"
+                                                                            src="/assets/images/icons/ic-caret-right-yellow.svg"
+                                                                            class="mp-link--caret__ic ml-2"
+                                                                        />
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    )}
 
-                <!-- Back link -->
-                <div class="post-back">
-                    <a href="/blog/" class="post-back__link">← Back to Blog</a>
-                </div>
+                    <!-- Useful Resources / Download Widget -->
+                    <section class="widget widget_mp_download_widget">
+                        <div class="pb-3 md:pb-8 md:pt-2">
+                            <div class="bg-purple px-4 lg:px-8 py-6 lg:py-8">
+                                <h2 class="text-yellow font-bold text-xl">Useful Resources</h2>
+                                <hr class="w-16 border-2 border-yellow my-4" />
+                                <div class="text-white text-xl">
+                                    <h3>
+                                        <strong>How to Pick A New Marketing Partner</strong>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div>
+                                <a
+                                    href="https://media-v2.meanpug.com/wp-content/uploads/2022/11/Choosing-a-New-Law-Firm-Marketing-Vendor.pdf"
+                                    class="mp-cursor mp-cursor-paw--download-paw-dark overflow-hidden block max-h-48"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        width="300"
+                                        height="200"
+                                        alt="designed purple PDF of MeanPug marketing vendor checklist on yellow background"
+                                        src="https://media-v2.meanpug.com/wp-content/uploads/2022/11/choosing-a-marketing-vendor-cover-image-300x200.png"
+                                        class="w-full mp-animation mp-animation--scale-hover mp-animation--scale-hover--110 wp-post-image"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Social Share Widget -->
+                    <section class="mp-last-widget-sticky sticky top-32 widget widget_mp_social_share_widget">
+                        <div class="py-3 md:py-8 px-4 md:px-0">
+                            <strong class="text-purple-900">Share This Post</strong>
+                            <ul class="flex items-center pt-4">
+                                <li>
+                                    <button
+                                        class="mp-link mp-link--circle-expand mp-share-button relative"
+                                        data-target="facebook"
+                                        aria-label="Share on Facebook"
+                                    >
+                                        <img
+                                            alt="Facebook Follow Icon"
+                                            src="/assets/images/icons/ic-fb.svg"
+                                            class="h-8 relative z-10"
+                                        />
+                                    </button>
+                                </li>
+                                <li class="px-8">
+                                    <button
+                                        data-target="linkedin"
+                                        class="mp-link mp-link--circle-expand mp-share-button relative"
+                                        aria-label="Share on LinkedIn"
+                                    >
+                                        <img
+                                            alt="LinkedIn Follow Icon"
+                                            src="/assets/images/icons/ic-linkedin.svg"
+                                            class="h-8 relative z-10"
+                                        />
+                                    </button>
+                                </li>
+                                <li>
+                                    <a
+                                        class="mp-link mp-link--circle-expand relative block"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://www.instagram.com/meanpugdigital/"
+                                        aria-label="Follow on Instagram"
+                                    >
+                                        <img
+                                            alt="Instagram Follow Icon"
+                                            src="/assets/images/icons/ic-ig.svg"
+                                            class="h-6 relative z-10"
+                                        />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </aside>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="w-full md:w-2/3 xl:w-3/4 md:pl-8 order-first md:order-last mp-mobile-bounds overflow-hidden">
+                <article
+                    id={`post-${post.id}`}
+                    class="mp-core-style mp-content-style"
+                    set:html={post.content.rendered}
+                />
             </div>
-        </article>
+        </div>
     </main>
 
     <Footer />
 </Layout>
 
-<style>
-    /* ── Hero / header ────────────────────────────────────────────────────── */
-    .post-hero {
-        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 60%, #0d1b4b 100%);
-        padding: 4rem 1.5rem 3.5rem;
-        position: relative;
-        overflow: hidden;
-    }
+<script>
+    // Social share buttons
+    document.querySelectorAll('.mp-share-button').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-target');
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
 
-    .post-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 210, 0, 0.07) 0%, transparent 70%);
-        pointer-events: none;
-    }
+            if (target === 'facebook') {
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            } else if (target === 'linkedin') {
+                shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
+            }
 
-    .post-hero__inner {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    /* Breadcrumb */
-    .post-breadcrumb {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.5);
-        margin-bottom: 1.5rem;
-        flex-wrap: wrap;
-    }
-
-    .post-breadcrumb a {
-        color: rgba(255, 255, 255, 0.5);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    .post-breadcrumb a:hover {
-        color: #ffd200;
-    }
-
-    /* Categories */
-    .post-categories {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        margin-bottom: 1rem;
-    }
-
-    .post-category {
-        display: inline-block;
-        background: rgba(255, 210, 0, 0.15);
-        border: 1px solid rgba(255, 210, 0, 0.35);
-        color: #ffd200;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 0.3rem 0.9rem;
-        border-radius: 100px;
-    }
-
-    /* Title */
-    .post-title {
-        font-size: clamp(1.75rem, 4vw, 2.75rem);
-        font-weight: 800;
-        color: #fff;
-        line-height: 1.2;
-        margin: 0 0 1.5rem;
-    }
-
-    /* Meta */
-    .post-meta {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-    }
-
-    .post-author {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-    }
-
-    .post-author__avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid rgba(255, 210, 0, 0.4);
-    }
-
-    .post-author__name {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    .post-date {
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* ── Featured image ───────────────────────────────────────────────────── */
-    .post-featured-image {
-        background: #f8f7f4;
-        padding: 0 1.5rem;
-    }
-
-    .post-featured-image__inner {
-        max-width: 900px;
-        margin: 0 auto;
-        transform: translateY(-2rem);
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
-    }
-
-    .post-featured-image__img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    /* ── Content ──────────────────────────────────────────────────────────── */
-    .post-content-section {
-        background: #f8f7f4;
-        padding: 0 1.5rem 5rem;
-    }
-
-    .post-content-inner {
-        max-width: 760px;
-        margin: 0 auto;
-    }
-
-    /* WP content typography */
-    .wp-content {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        color: #2a2a2a;
-    }
-
-    .wp-content :global(h2) {
-        font-size: 1.6rem;
-        font-weight: 800;
-        color: #0a0e1a;
-        margin: 2.5rem 0 1rem;
-        line-height: 1.3;
-    }
-
-    .wp-content :global(h3) {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #0a0e1a;
-        margin: 2rem 0 0.75rem;
-    }
-
-    .wp-content :global(h4) {
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: #0a0e1a;
-        margin: 1.5rem 0 0.5rem;
-    }
-
-    .wp-content :global(p) {
-        margin: 0 0 1.4rem;
-    }
-
-    .wp-content :global(a) {
-        color: #0d1b4b;
-        font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        transition: color 0.2s;
-    }
-
-    .wp-content :global(a:hover) {
-        color: #ffd200;
-    }
-
-    .wp-content :global(ul),
-    .wp-content :global(ol) {
-        margin: 0 0 1.4rem 1.5rem;
-        padding: 0;
-    }
-
-    .wp-content :global(li) {
-        margin-bottom: 0.5rem;
-    }
-
-    .wp-content :global(blockquote) {
-        border-left: 4px solid #ffd200;
-        margin: 2rem 0;
-        padding: 1rem 1.5rem;
-        background: rgba(255, 210, 0, 0.06);
-        border-radius: 0 8px 8px 0;
-        font-style: italic;
-        color: #444;
-    }
-
-    .wp-content :global(img) {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin: 1.5rem 0;
-    }
-
-    .wp-content :global(figure) {
-        margin: 2rem 0;
-    }
-
-    .wp-content :global(figcaption) {
-        font-size: 0.85rem;
-        color: #888;
-        text-align: center;
-        margin-top: 0.5rem;
-    }
-
-    .wp-content :global(pre),
-    .wp-content :global(code) {
-        font-family: "Fira Code", "Courier New", monospace;
-        background: #1a1f3a;
-        color: #e2e8f0;
-        border-radius: 6px;
-        font-size: 0.9rem;
-    }
-
-    .wp-content :global(pre) {
-        padding: 1.25rem 1.5rem;
-        overflow-x: auto;
-        margin: 1.5rem 0;
-    }
-
-    .wp-content :global(code) {
-        padding: 0.2em 0.45em;
-    }
-
-    /* Back link */
-    .post-back {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid #e5e5e5;
-    }
-
-    .post-back__link {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: #0d1b4b;
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    .post-back__link:hover {
-        color: #ffd200;
-    }
-</style>
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        });
+    });
+</script>

@@ -1,0 +1,1166 @@
+{
+  "id": 2494,
+  "date": "2025-05-02T18:11:56",
+  "date_gmt": "2025-05-02T18:11:56",
+  "guid": {
+    "rendered": "https://www.meanpug.com/?p=2494"
+  },
+  "modified": "2025-05-07T14:52:32",
+  "modified_gmt": "2025-05-07T14:52:32",
+  "slug": "a-definitive-study-on-law-firm-website-color-choices-2025",
+  "status": "publish",
+  "type": "post",
+  "link": "https://www.meanpug.com/a-definitive-study-on-law-firm-website-color-choices-2025/",
+  "title": {
+    "rendered": "A Definitive Study on Law Firm Website Color Choices (2025)"
+  },
+  "content": {
+    "rendered": "<TRUNCATED FOR READABILITY>",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>We wanted to dive deep into website design to see which colors, or pairs of colors, are used most often in law firm website builds. So we designed a data science study to find out. You may be surprised by the results.</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 2508,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "sticky": true,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "_acf_changed": false,
+    "footnotes": ""
+  },
+  "categories": [
+    1
+  ],
+  "tags": [
+    138,
+    137,
+    40,
+    46,
+    24
+  ],
+  "class_list": [
+    "post-2494",
+    "post",
+    "type-post",
+    "status-publish",
+    "format-standard",
+    "has-post-thumbnail",
+    "hentry",
+    "category-uncategorized",
+    "tag-color-psychology",
+    "tag-law-firm-colors",
+    "tag-law-firm-marketing",
+    "tag-marketing-for-lawyers",
+    "tag-web-design"
+  ],
+  "acf": [],
+  "yoast_head": "<TRUNCATED>",
+  "yoast_head_json": "<TRUNCATED>",
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.meanpug.com/wp-json/wp/v2/posts/2494",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.meanpug.com/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.meanpug.com/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.meanpug.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.meanpug.com/wp-json/wp/v2/comments?post=2494"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 0,
+        "href": "https://www.meanpug.com/wp-json/wp/v2/posts/2494/revisions"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://www.meanpug.com/wp-json/wp/v2/media/2508"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.meanpug.com/wp-json/wp/v2/media?parent=2494"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://www.meanpug.com/wp-json/wp/v2/categories?post=2494"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://www.meanpug.com/wp-json/wp/v2/tags?post=2494"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "_embedded": {
+    "author": [
+      {
+        "id": 1,
+        "name": "Bobby Steinbach",
+        "url": "",
+        "description": "",
+        "link": "https://www.meanpug.com/author/bobby/",
+        "slug": "bobby",
+        "avatar_urls": {
+          "24": "https://secure.gravatar.com/avatar/72273a5cc5a08cabb6e52f1e1bbfe544ff9d2cf0d943ec0c53ac7d2c721fb024?s=24&d=mm&r=g",
+          "48": "https://secure.gravatar.com/avatar/72273a5cc5a08cabb6e52f1e1bbfe544ff9d2cf0d943ec0c53ac7d2c721fb024?s=48&d=mm&r=g",
+          "96": "https://secure.gravatar.com/avatar/72273a5cc5a08cabb6e52f1e1bbfe544ff9d2cf0d943ec0c53ac7d2c721fb024?s=96&d=mm&r=g"
+        },
+        "yoast_head": null,
+        "yoast_head_json": null,
+        "acf": [],
+        "_links": {
+          "self": [
+            {
+              "href": "https://www.meanpug.com/wp-json/wp/v2/users/1",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://www.meanpug.com/wp-json/wp/v2/users"
+            }
+          ]
+        }
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "id": 2508,
+        "date": "2025-03-26T21:26:20",
+        "slug": "featured_image",
+        "type": "attachment",
+        "link": "https://www.meanpug.com/a-definitive-study-on-law-firm-website-color-choices-2025/featured_image/",
+        "title": {
+          "rendered": "A pug wearing a red shirt is held upright by human hands. One hand holds a paintbrush, and a colorful artists palette is shown on a bright yellow background, highlighting the influence of color psychology in art."
+        },
+        "author": 56,
+        "featured_media": 0,
+        "acf": [],
+        "caption": {
+          "rendered": "<p>A pug wearing a red shirt is held upright by human hands. One hand holds a paintbrush, and a colorful artists palette is shown on a bright yellow background, highlighting the influence of color psychology in art.</p>\n"
+        },
+        "alt_text": "A pug wearing a red shirt is held upright by human hands. One hand holds a paintbrush, and a colorful artists palette is shown on a bright yellow background, highlighting the influence of color psychology in art.",
+        "media_type": "image",
+        "mime_type": "image/jpeg",
+        "media_details": {
+          "width": 1920,
+          "height": 720,
+          "file": "2025/03/Featured_Image.jpg",
+          "filesize": 485047,
+          "sizes": {
+            "medium": {
+              "file": "Featured_Image-300x113.jpg",
+              "width": 300,
+              "height": 113,
+              "filesize": 8948,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-300x113.jpg"
+            },
+            "large": {
+              "file": "Featured_Image-1024x384.jpg",
+              "width": 1024,
+              "height": 384,
+              "filesize": 46878,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-1024x384.jpg"
+            },
+            "thumbnail": {
+              "file": "Featured_Image-150x150.jpg",
+              "width": 150,
+              "height": 150,
+              "filesize": 6827,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-150x150.jpg"
+            },
+            "medium_large": {
+              "file": "Featured_Image-768x288.jpg",
+              "width": 768,
+              "height": 288,
+              "filesize": 31048,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-768x288.jpg"
+            },
+            "1536x1536": {
+              "file": "Featured_Image-1536x576.jpg",
+              "width": 1536,
+              "height": 576,
+              "filesize": 82079,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-1536x576.jpg"
+            },
+            "gform-image-choice-sm": {
+              "file": "Featured_Image-300x300.jpg",
+              "width": 300,
+              "height": 300,
+              "filesize": 19008,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-300x300.jpg"
+            },
+            "gform-image-choice-md": {
+              "file": "Featured_Image-400x400.jpg",
+              "width": 400,
+              "height": 400,
+              "filesize": 28830,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-400x400.jpg"
+            },
+            "gform-image-choice-lg": {
+              "file": "Featured_Image-600x600.jpg",
+              "width": 600,
+              "height": 600,
+              "filesize": 52368,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image-600x600.jpg"
+            },
+            "full": {
+              "file": "Featured_Image.jpg",
+              "width": 1920,
+              "height": 720,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image.jpg"
+            }
+          },
+          "image_meta": {
+            "aperture": "0",
+            "credit": "",
+            "camera": "",
+            "caption": "",
+            "created_timestamp": "0",
+            "copyright": "",
+            "focal_length": "0",
+            "iso": "0",
+            "shutter_speed": "0",
+            "title": "",
+            "orientation": "0",
+            "keywords": []
+          }
+        },
+        "source_url": "https://www.meanpug.com/wp-content/uploads/2025/03/Featured_Image.jpg",
+        "_links": {
+          "self": [
+            {
+              "href": "https://www.meanpug.com/wp-json/wp/v2/media/2508",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://www.meanpug.com/wp-json/wp/v2/media"
+            }
+          ],
+          "about": [
+            {
+              "href": "https://www.meanpug.com/wp-json/wp/v2/types/attachment"
+            }
+          ],
+          "author": [
+            {
+              "embeddable": true,
+              "href": "https://www.meanpug.com/wp-json/wp/v2/users/56"
+            }
+          ],
+          "replies": [
+            {
+              "embeddable": true,
+              "href": "https://www.meanpug.com/wp-json/wp/v2/comments?post=2508"
+            }
+          ],
+          "wp:attached-to": [
+            {
+              "embeddable": true,
+              "post_type": "post",
+              "id": 2494,
+              "href": "https://www.meanpug.com/wp-json/wp/v2/posts/2494"
+            }
+          ],
+          "curies": [
+            {
+              "name": "wp",
+              "href": "https://api.w.org/{rel}",
+              "templated": true
+            }
+          ]
+        }
+      }
+    ],
+    "wp:term": [
+      [
+        {
+          "id": 1,
+          "link": "https://www.meanpug.com/category/uncategorized/",
+          "name": "Uncategorized",
+          "slug": "uncategorized",
+          "taxonomy": "category",
+          "yoast_head": "<TRUNCATED>",
+          "yoast_head_json": "<TRUNCATED>",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/categories/1",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/posts?categories=1"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/service?categories=1"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/event?categories=1"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/litigation?categories=1"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/persona?categories=1"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/podcast?categories=1"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "id": 138,
+          "link": "https://www.meanpug.com/tag/color-psychology/",
+          "name": "color psychology",
+          "slug": "color-psychology",
+          "taxonomy": "post_tag",
+          "yoast_head": "<TRUNCATED>",
+          "yoast_head_json": "<TRUNCATED>",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags/138",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/posts?tags=138"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/service?tags=138"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/event?tags=138"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/litigation?tags=138"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/persona?tags=138"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/podcast?tags=138"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 137,
+          "link": "https://www.meanpug.com/tag/law-firm-colors/",
+          "name": "law firm colors",
+          "slug": "law-firm-colors",
+          "taxonomy": "post_tag",
+          "yoast_head": "<!-- This site is optimized with the Yoast SEO Premium plugin v27.4 (Yoast SEO v27.4) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->\n<title>law firm colors Archives | MeanPug Digital</title>\n<meta name=\"robots\" content=\"noindex, follow\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"law firm colors Archives\" />\n<meta property=\"og:url\" content=\"https://www.meanpug.com/tag/law-firm-colors/\" />\n<meta property=\"og:site_name\" content=\"MeanPug Digital\" />\n<meta property=\"og:image\" content=\"https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg\" />\n\t<meta property=\"og:image:width\" content=\"1116\" />\n\t<meta property=\"og:image:height\" content=\"742\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:site\" content=\"@meanpug\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-colors\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-colors\\/\",\"name\":\"law firm colors Archives | MeanPug Digital\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-colors\\/#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-colors\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.meanpug.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"law firm colors\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"name\":\"MeanPug Digital\",\"description\":\"Loyal Marketing for Ambitious Law Firms\",\"publisher\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.meanpug.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\",\"name\":\"MeanPug Digital\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"contentUrl\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"width\":280,\"height\":280,\"caption\":\"MeanPug Digital\"},\"image\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/meanpug\",\"https:\\/\\/x.com\\/meanpug\",\"https:\\/\\/www.instagram.com\\/meanpugdigital\\/\",\"https:\\/\\/www.linkedin.com\\/company\\/meanpug-digital-agency\\/\",\"https:\\/\\/www.pinterest.com\\/meanpugdigital\\/\",\"https:\\/\\/www.youtube.com\\/@meanpugdigital\"],\"description\":\"MeanPug is Loyal Marketing for Ambitious Law Firms.\",\"email\":\"bark@meanpug.com\",\"telephone\":\"(646) 461-4213\",\"legalName\":\"MeanPug, LLC\",\"foundingDate\":\"2017-02-27\",\"duns\":\"010134376\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"minValue\":\"11\",\"maxValue\":\"50\"}}]}</script>\n<!-- / Yoast SEO Premium plugin. -->",
+          "yoast_head_json": {
+            "title": "law firm colors Archives | MeanPug Digital",
+            "robots": {
+              "index": "noindex",
+              "follow": "follow"
+            },
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "law firm colors Archives",
+            "og_url": "https://www.meanpug.com/tag/law-firm-colors/",
+            "og_site_name": "MeanPug Digital",
+            "og_image": [
+              {
+                "width": 1116,
+                "height": 742,
+                "url": "https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg",
+                "type": "image/jpeg"
+              }
+            ],
+            "twitter_card": "summary_large_image",
+            "twitter_site": "@meanpug",
+            "schema": {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "CollectionPage",
+                  "@id": "https://www.meanpug.com/tag/law-firm-colors/",
+                  "url": "https://www.meanpug.com/tag/law-firm-colors/",
+                  "name": "law firm colors Archives | MeanPug Digital",
+                  "isPartOf": {
+                    "@id": "https://www.meanpug.com/#website"
+                  },
+                  "breadcrumb": {
+                    "@id": "https://www.meanpug.com/tag/law-firm-colors/#breadcrumb"
+                  },
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "https://www.meanpug.com/tag/law-firm-colors/#breadcrumb",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://www.meanpug.com/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "law firm colors"
+                    }
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.meanpug.com/#website",
+                  "url": "https://www.meanpug.com/",
+                  "name": "MeanPug Digital",
+                  "description": "Loyal Marketing for Ambitious Law Firms",
+                  "publisher": {
+                    "@id": "https://www.meanpug.com/#organization"
+                  },
+                  "potentialAction": [
+                    {
+                      "@type": "SearchAction",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.meanpug.com/?s={search_term_string}"
+                      },
+                      "query-input": {
+                        "@type": "PropertyValueSpecification",
+                        "valueRequired": true,
+                        "valueName": "search_term_string"
+                      }
+                    }
+                  ],
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.meanpug.com/#organization",
+                  "name": "MeanPug Digital",
+                  "url": "https://www.meanpug.com/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "inLanguage": "en-US",
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/",
+                    "url": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "contentUrl": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "width": 280,
+                    "height": 280,
+                    "caption": "MeanPug Digital"
+                  },
+                  "image": {
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/meanpug",
+                    "https://x.com/meanpug",
+                    "https://www.instagram.com/meanpugdigital/",
+                    "https://www.linkedin.com/company/meanpug-digital-agency/",
+                    "https://www.pinterest.com/meanpugdigital/",
+                    "https://www.youtube.com/@meanpugdigital"
+                  ],
+                  "description": "MeanPug is Loyal Marketing for Ambitious Law Firms.",
+                  "email": "bark@meanpug.com",
+                  "telephone": "(646) 461-4213",
+                  "legalName": "MeanPug, LLC",
+                  "foundingDate": "2017-02-27",
+                  "duns": "010134376",
+                  "numberOfEmployees": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "11",
+                    "maxValue": "50"
+                  }
+                }
+              ]
+            }
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags/137",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/posts?tags=137"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/service?tags=137"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/event?tags=137"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/litigation?tags=137"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/persona?tags=137"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/podcast?tags=137"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 40,
+          "link": "https://www.meanpug.com/tag/law-firm-marketing/",
+          "name": "Law Firm Marketing",
+          "slug": "law-firm-marketing",
+          "taxonomy": "post_tag",
+          "yoast_head": "<!-- This site is optimized with the Yoast SEO Premium plugin v27.4 (Yoast SEO v27.4) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->\n<title>Law Firm Marketing Archives | MeanPug Digital</title>\n<meta name=\"robots\" content=\"noindex, follow\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Law Firm Marketing Archives\" />\n<meta property=\"og:url\" content=\"https://www.meanpug.com/tag/law-firm-marketing/\" />\n<meta property=\"og:site_name\" content=\"MeanPug Digital\" />\n<meta property=\"og:image\" content=\"https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg\" />\n\t<meta property=\"og:image:width\" content=\"1116\" />\n\t<meta property=\"og:image:height\" content=\"742\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:site\" content=\"@meanpug\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-marketing\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-marketing\\/\",\"name\":\"Law Firm Marketing Archives | MeanPug Digital\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-marketing\\/#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/law-firm-marketing\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.meanpug.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Law Firm Marketing\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"name\":\"MeanPug Digital\",\"description\":\"Loyal Marketing for Ambitious Law Firms\",\"publisher\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.meanpug.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\",\"name\":\"MeanPug Digital\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"contentUrl\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"width\":280,\"height\":280,\"caption\":\"MeanPug Digital\"},\"image\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/meanpug\",\"https:\\/\\/x.com\\/meanpug\",\"https:\\/\\/www.instagram.com\\/meanpugdigital\\/\",\"https:\\/\\/www.linkedin.com\\/company\\/meanpug-digital-agency\\/\",\"https:\\/\\/www.pinterest.com\\/meanpugdigital\\/\",\"https:\\/\\/www.youtube.com\\/@meanpugdigital\"],\"description\":\"MeanPug is Loyal Marketing for Ambitious Law Firms.\",\"email\":\"bark@meanpug.com\",\"telephone\":\"(646) 461-4213\",\"legalName\":\"MeanPug, LLC\",\"foundingDate\":\"2017-02-27\",\"duns\":\"010134376\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"minValue\":\"11\",\"maxValue\":\"50\"}}]}</script>\n<!-- / Yoast SEO Premium plugin. -->",
+          "yoast_head_json": {
+            "title": "Law Firm Marketing Archives | MeanPug Digital",
+            "robots": {
+              "index": "noindex",
+              "follow": "follow"
+            },
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Law Firm Marketing Archives",
+            "og_url": "https://www.meanpug.com/tag/law-firm-marketing/",
+            "og_site_name": "MeanPug Digital",
+            "og_image": [
+              {
+                "width": 1116,
+                "height": 742,
+                "url": "https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg",
+                "type": "image/jpeg"
+              }
+            ],
+            "twitter_card": "summary_large_image",
+            "twitter_site": "@meanpug",
+            "schema": {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "CollectionPage",
+                  "@id": "https://www.meanpug.com/tag/law-firm-marketing/",
+                  "url": "https://www.meanpug.com/tag/law-firm-marketing/",
+                  "name": "Law Firm Marketing Archives | MeanPug Digital",
+                  "isPartOf": {
+                    "@id": "https://www.meanpug.com/#website"
+                  },
+                  "breadcrumb": {
+                    "@id": "https://www.meanpug.com/tag/law-firm-marketing/#breadcrumb"
+                  },
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "https://www.meanpug.com/tag/law-firm-marketing/#breadcrumb",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://www.meanpug.com/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Law Firm Marketing"
+                    }
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.meanpug.com/#website",
+                  "url": "https://www.meanpug.com/",
+                  "name": "MeanPug Digital",
+                  "description": "Loyal Marketing for Ambitious Law Firms",
+                  "publisher": {
+                    "@id": "https://www.meanpug.com/#organization"
+                  },
+                  "potentialAction": [
+                    {
+                      "@type": "SearchAction",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.meanpug.com/?s={search_term_string}"
+                      },
+                      "query-input": {
+                        "@type": "PropertyValueSpecification",
+                        "valueRequired": true,
+                        "valueName": "search_term_string"
+                      }
+                    }
+                  ],
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.meanpug.com/#organization",
+                  "name": "MeanPug Digital",
+                  "url": "https://www.meanpug.com/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "inLanguage": "en-US",
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/",
+                    "url": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "contentUrl": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "width": 280,
+                    "height": 280,
+                    "caption": "MeanPug Digital"
+                  },
+                  "image": {
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/meanpug",
+                    "https://x.com/meanpug",
+                    "https://www.instagram.com/meanpugdigital/",
+                    "https://www.linkedin.com/company/meanpug-digital-agency/",
+                    "https://www.pinterest.com/meanpugdigital/",
+                    "https://www.youtube.com/@meanpugdigital"
+                  ],
+                  "description": "MeanPug is Loyal Marketing for Ambitious Law Firms.",
+                  "email": "bark@meanpug.com",
+                  "telephone": "(646) 461-4213",
+                  "legalName": "MeanPug, LLC",
+                  "foundingDate": "2017-02-27",
+                  "duns": "010134376",
+                  "numberOfEmployees": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "11",
+                    "maxValue": "50"
+                  }
+                }
+              ]
+            }
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags/40",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/posts?tags=40"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/service?tags=40"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/event?tags=40"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/litigation?tags=40"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/persona?tags=40"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/podcast?tags=40"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 46,
+          "link": "https://www.meanpug.com/tag/marketing-for-lawyers/",
+          "name": "marketing for lawyers",
+          "slug": "marketing-for-lawyers",
+          "taxonomy": "post_tag",
+          "yoast_head": "<!-- This site is optimized with the Yoast SEO Premium plugin v27.4 (Yoast SEO v27.4) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->\n<title>marketing for lawyers Archives | MeanPug Digital</title>\n<meta name=\"robots\" content=\"noindex, follow\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"marketing for lawyers Archives\" />\n<meta property=\"og:url\" content=\"https://www.meanpug.com/tag/marketing-for-lawyers/\" />\n<meta property=\"og:site_name\" content=\"MeanPug Digital\" />\n<meta property=\"og:image\" content=\"https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg\" />\n\t<meta property=\"og:image:width\" content=\"1116\" />\n\t<meta property=\"og:image:height\" content=\"742\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:site\" content=\"@meanpug\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/marketing-for-lawyers\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/tag\\/marketing-for-lawyers\\/\",\"name\":\"marketing for lawyers Archives | MeanPug Digital\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/marketing-for-lawyers\\/#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/marketing-for-lawyers\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.meanpug.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"marketing for lawyers\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"name\":\"MeanPug Digital\",\"description\":\"Loyal Marketing for Ambitious Law Firms\",\"publisher\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.meanpug.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\",\"name\":\"MeanPug Digital\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"contentUrl\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"width\":280,\"height\":280,\"caption\":\"MeanPug Digital\"},\"image\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/meanpug\",\"https:\\/\\/x.com\\/meanpug\",\"https:\\/\\/www.instagram.com\\/meanpugdigital\\/\",\"https:\\/\\/www.linkedin.com\\/company\\/meanpug-digital-agency\\/\",\"https:\\/\\/www.pinterest.com\\/meanpugdigital\\/\",\"https:\\/\\/www.youtube.com\\/@meanpugdigital\"],\"description\":\"MeanPug is Loyal Marketing for Ambitious Law Firms.\",\"email\":\"bark@meanpug.com\",\"telephone\":\"(646) 461-4213\",\"legalName\":\"MeanPug, LLC\",\"foundingDate\":\"2017-02-27\",\"duns\":\"010134376\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"minValue\":\"11\",\"maxValue\":\"50\"}}]}</script>\n<!-- / Yoast SEO Premium plugin. -->",
+          "yoast_head_json": {
+            "title": "marketing for lawyers Archives | MeanPug Digital",
+            "robots": {
+              "index": "noindex",
+              "follow": "follow"
+            },
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "marketing for lawyers Archives",
+            "og_url": "https://www.meanpug.com/tag/marketing-for-lawyers/",
+            "og_site_name": "MeanPug Digital",
+            "og_image": [
+              {
+                "width": 1116,
+                "height": 742,
+                "url": "https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg",
+                "type": "image/jpeg"
+              }
+            ],
+            "twitter_card": "summary_large_image",
+            "twitter_site": "@meanpug",
+            "schema": {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "CollectionPage",
+                  "@id": "https://www.meanpug.com/tag/marketing-for-lawyers/",
+                  "url": "https://www.meanpug.com/tag/marketing-for-lawyers/",
+                  "name": "marketing for lawyers Archives | MeanPug Digital",
+                  "isPartOf": {
+                    "@id": "https://www.meanpug.com/#website"
+                  },
+                  "breadcrumb": {
+                    "@id": "https://www.meanpug.com/tag/marketing-for-lawyers/#breadcrumb"
+                  },
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "https://www.meanpug.com/tag/marketing-for-lawyers/#breadcrumb",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://www.meanpug.com/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "marketing for lawyers"
+                    }
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.meanpug.com/#website",
+                  "url": "https://www.meanpug.com/",
+                  "name": "MeanPug Digital",
+                  "description": "Loyal Marketing for Ambitious Law Firms",
+                  "publisher": {
+                    "@id": "https://www.meanpug.com/#organization"
+                  },
+                  "potentialAction": [
+                    {
+                      "@type": "SearchAction",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.meanpug.com/?s={search_term_string}"
+                      },
+                      "query-input": {
+                        "@type": "PropertyValueSpecification",
+                        "valueRequired": true,
+                        "valueName": "search_term_string"
+                      }
+                    }
+                  ],
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.meanpug.com/#organization",
+                  "name": "MeanPug Digital",
+                  "url": "https://www.meanpug.com/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "inLanguage": "en-US",
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/",
+                    "url": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "contentUrl": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "width": 280,
+                    "height": 280,
+                    "caption": "MeanPug Digital"
+                  },
+                  "image": {
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/meanpug",
+                    "https://x.com/meanpug",
+                    "https://www.instagram.com/meanpugdigital/",
+                    "https://www.linkedin.com/company/meanpug-digital-agency/",
+                    "https://www.pinterest.com/meanpugdigital/",
+                    "https://www.youtube.com/@meanpugdigital"
+                  ],
+                  "description": "MeanPug is Loyal Marketing for Ambitious Law Firms.",
+                  "email": "bark@meanpug.com",
+                  "telephone": "(646) 461-4213",
+                  "legalName": "MeanPug, LLC",
+                  "foundingDate": "2017-02-27",
+                  "duns": "010134376",
+                  "numberOfEmployees": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "11",
+                    "maxValue": "50"
+                  }
+                }
+              ]
+            }
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags/46",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/posts?tags=46"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/service?tags=46"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/event?tags=46"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/litigation?tags=46"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/persona?tags=46"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/podcast?tags=46"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "link": "https://www.meanpug.com/tag/web-design/",
+          "name": "Web Design",
+          "slug": "web-design",
+          "taxonomy": "post_tag",
+          "yoast_head": "<!-- This site is optimized with the Yoast SEO Premium plugin v27.4 (Yoast SEO v27.4) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->\n<title>Web Design Archives | MeanPug Digital</title>\n<meta name=\"robots\" content=\"noindex, follow\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Web Design Archives\" />\n<meta property=\"og:url\" content=\"https://www.meanpug.com/tag/web-design/\" />\n<meta property=\"og:site_name\" content=\"MeanPug Digital\" />\n<meta property=\"og:image\" content=\"https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg\" />\n\t<meta property=\"og:image:width\" content=\"1116\" />\n\t<meta property=\"og:image:height\" content=\"742\" />\n\t<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:site\" content=\"@meanpug\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/web-design\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/tag\\/web-design\\/\",\"name\":\"Web Design Archives | MeanPug Digital\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/web-design\\/#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.meanpug.com\\/tag\\/web-design\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.meanpug.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Web Design\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#website\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"name\":\"MeanPug Digital\",\"description\":\"Loyal Marketing for Ambitious Law Firms\",\"publisher\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.meanpug.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#organization\",\"name\":\"MeanPug Digital\",\"url\":\"https:\\/\\/www.meanpug.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"contentUrl\":\"https:\\/\\/www.meanpug.com\\/wp-content\\/uploads\\/2023\\/02\\/MP-Logo-280.jpg\",\"width\":280,\"height\":280,\"caption\":\"MeanPug Digital\"},\"image\":{\"@id\":\"https:\\/\\/www.meanpug.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/meanpug\",\"https:\\/\\/x.com\\/meanpug\",\"https:\\/\\/www.instagram.com\\/meanpugdigital\\/\",\"https:\\/\\/www.linkedin.com\\/company\\/meanpug-digital-agency\\/\",\"https:\\/\\/www.pinterest.com\\/meanpugdigital\\/\",\"https:\\/\\/www.youtube.com\\/@meanpugdigital\"],\"description\":\"MeanPug is Loyal Marketing for Ambitious Law Firms.\",\"email\":\"bark@meanpug.com\",\"telephone\":\"(646) 461-4213\",\"legalName\":\"MeanPug, LLC\",\"foundingDate\":\"2017-02-27\",\"duns\":\"010134376\",\"numberOfEmployees\":{\"@type\":\"QuantitativeValue\",\"minValue\":\"11\",\"maxValue\":\"50\"}}]}</script>\n<!-- / Yoast SEO Premium plugin. -->",
+          "yoast_head_json": {
+            "title": "Web Design Archives | MeanPug Digital",
+            "robots": {
+              "index": "noindex",
+              "follow": "follow"
+            },
+            "og_locale": "en_US",
+            "og_type": "article",
+            "og_title": "Web Design Archives",
+            "og_url": "https://www.meanpug.com/tag/web-design/",
+            "og_site_name": "MeanPug Digital",
+            "og_image": [
+              {
+                "width": 1116,
+                "height": 742,
+                "url": "https://www.meanpug.com/wp-content/uploads/2021/08/Grow-With-MeanPug.jpeg",
+                "type": "image/jpeg"
+              }
+            ],
+            "twitter_card": "summary_large_image",
+            "twitter_site": "@meanpug",
+            "schema": {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "CollectionPage",
+                  "@id": "https://www.meanpug.com/tag/web-design/",
+                  "url": "https://www.meanpug.com/tag/web-design/",
+                  "name": "Web Design Archives | MeanPug Digital",
+                  "isPartOf": {
+                    "@id": "https://www.meanpug.com/#website"
+                  },
+                  "breadcrumb": {
+                    "@id": "https://www.meanpug.com/tag/web-design/#breadcrumb"
+                  },
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "https://www.meanpug.com/tag/web-design/#breadcrumb",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://www.meanpug.com/"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Web Design"
+                    }
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.meanpug.com/#website",
+                  "url": "https://www.meanpug.com/",
+                  "name": "MeanPug Digital",
+                  "description": "Loyal Marketing for Ambitious Law Firms",
+                  "publisher": {
+                    "@id": "https://www.meanpug.com/#organization"
+                  },
+                  "potentialAction": [
+                    {
+                      "@type": "SearchAction",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.meanpug.com/?s={search_term_string}"
+                      },
+                      "query-input": {
+                        "@type": "PropertyValueSpecification",
+                        "valueRequired": true,
+                        "valueName": "search_term_string"
+                      }
+                    }
+                  ],
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.meanpug.com/#organization",
+                  "name": "MeanPug Digital",
+                  "url": "https://www.meanpug.com/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "inLanguage": "en-US",
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/",
+                    "url": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "contentUrl": "https://www.meanpug.com/wp-content/uploads/2023/02/MP-Logo-280.jpg",
+                    "width": 280,
+                    "height": 280,
+                    "caption": "MeanPug Digital"
+                  },
+                  "image": {
+                    "@id": "https://www.meanpug.com/#/schema/logo/image/"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/meanpug",
+                    "https://x.com/meanpug",
+                    "https://www.instagram.com/meanpugdigital/",
+                    "https://www.linkedin.com/company/meanpug-digital-agency/",
+                    "https://www.pinterest.com/meanpugdigital/",
+                    "https://www.youtube.com/@meanpugdigital"
+                  ],
+                  "description": "MeanPug is Loyal Marketing for Ambitious Law Firms.",
+                  "email": "bark@meanpug.com",
+                  "telephone": "(646) 461-4213",
+                  "legalName": "MeanPug, LLC",
+                  "foundingDate": "2017-02-27",
+                  "duns": "010134376",
+                  "numberOfEmployees": {
+                    "@type": "QuantitativeValue",
+                    "minValue": "11",
+                    "maxValue": "50"
+                  }
+                }
+              ]
+            }
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags/24",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/posts?tags=24"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/service?tags=24"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/event?tags=24"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/litigation?tags=24"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/persona?tags=24"
+              },
+              {
+                "href": "https://www.meanpug.com/wp-json/wp/v2/podcast?tags=24"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ]
+    ]
+  }
+}
