@@ -2,11 +2,30 @@
  * WordPress REST API client
  */
 
-const BASE_URL = import.meta.env.WORDPRESS_API_URL as string;
+const LOCAL_WORDPRESS_HOSTS = new Set(["meanpug.test", "localhost", "127.0.0.1"]);
+const DEFAULT_PRODUCTION_API_URL = "https://www.meanpug.com/wp-json/wp/v2";
 
-if (!BASE_URL) {
-    throw new Error("WORDPRESS_API_URL is not set in your .env file.");
+function resolveBaseUrl(): string {
+    const configuredUrl = import.meta.env.WORDPRESS_API_URL?.trim();
+
+    if (!configuredUrl) {
+        return DEFAULT_PRODUCTION_API_URL;
+    }
+
+    try {
+        const parsedUrl = new URL(configuredUrl);
+
+        if (process.env.VERCEL && LOCAL_WORDPRESS_HOSTS.has(parsedUrl.hostname)) {
+            return DEFAULT_PRODUCTION_API_URL;
+        }
+
+        return parsedUrl.toString().replace(/\/$/, "");
+    } catch {
+        return configuredUrl.replace(/\/$/, "");
+    }
 }
+
+const BASE_URL = resolveBaseUrl();
 
 // ---------------------------------------------------------------------------
 // Types
