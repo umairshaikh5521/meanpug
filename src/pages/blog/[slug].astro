@@ -1,0 +1,371 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getAllPostSlugs, getPostBySlug, formatDate, getFeaturedImageUrl, stripHtml } from "../../lib/wordpress";
+
+export async function getStaticPaths() {
+    const slugs = await getAllPostSlugs();
+    return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug);
+
+if (!post) {
+    return Astro.redirect("/blog/");
+}
+
+const image = getFeaturedImageUrl(post, "large");
+const imageAlt = post._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || post.title.rendered;
+const author = post._embedded?.author?.[0];
+const categories = post._embedded?.["wp:term"]?.[0] ?? [];
+const plainExcerpt = stripHtml(post.excerpt.rendered).slice(0, 160);
+---
+
+<Layout
+    title={`${stripHtml(post.title.rendered)} | MeanPug Blog`}
+    description={plainExcerpt}
+    ogImage={image ?? "/og-image.png"}
+>
+    <Header />
+
+    <main id="main-content">
+        <!-- Post header -->
+        <header class="post-hero">
+            <div class="post-hero__inner">
+                <!-- Breadcrumb -->
+                <nav class="post-breadcrumb" aria-label="Breadcrumb">
+                    <a href="/">Home</a>
+                    <span aria-hidden="true">›</span>
+                    <a href="/blog/">Blog</a>
+                    <span aria-hidden="true">›</span>
+                    <span set:html={post.title.rendered} />
+                </nav>
+
+                <!-- Categories -->
+                {categories.length > 0 && (
+                    <div class="post-categories">
+                        {categories.slice(0, 3).map((cat) => (
+                            <span class="post-category">{cat.name}</span>
+                        ))}
+                    </div>
+                )}
+
+                <!-- Title -->
+                <h1 class="post-title" set:html={post.title.rendered} />
+
+                <!-- Meta -->
+                <div class="post-meta">
+                    {author && (
+                        <div class="post-author">
+                            {author.avatar_urls?.["48"] && (
+                                <img
+                                    src={author.avatar_urls["48"]}
+                                    alt={author.name}
+                                    class="post-author__avatar"
+                                    width="40"
+                                    height="40"
+                                />
+                            )}
+                            <span class="post-author__name">By {author.name}</span>
+                        </div>
+                    )}
+                    <time class="post-date" datetime={post.date}>
+                        {formatDate(post.date)}
+                    </time>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured image -->
+        {image && (
+            <div class="post-featured-image">
+                <div class="post-featured-image__inner">
+                    <img
+                        src={image}
+                        alt={imageAlt}
+                        class="post-featured-image__img"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </div>
+            </div>
+        )}
+
+        <!-- Content -->
+        <article class="post-content-section">
+            <div class="post-content-inner">
+                <div class="post-content wp-content" set:html={post.content.rendered} />
+
+                <!-- Back link -->
+                <div class="post-back">
+                    <a href="/blog/" class="post-back__link">← Back to Blog</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* ── Hero / header ────────────────────────────────────────────────────── */
+    .post-hero {
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 60%, #0d1b4b 100%);
+        padding: 4rem 1.5rem 3.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .post-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 210, 0, 0.07) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .post-hero__inner {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Breadcrumb */
+    .post-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .post-breadcrumb a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .post-breadcrumb a:hover {
+        color: #ffd200;
+    }
+
+    /* Categories */
+    .post-categories {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .post-category {
+        display: inline-block;
+        background: rgba(255, 210, 0, 0.15);
+        border: 1px solid rgba(255, 210, 0, 0.35);
+        color: #ffd200;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.9rem;
+        border-radius: 100px;
+    }
+
+    /* Title */
+    .post-title {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+        margin: 0 0 1.5rem;
+    }
+
+    /* Meta */
+    .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .post-author {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .post-author__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 210, 0, 0.4);
+    }
+
+    .post-author__name {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .post-date {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ── Featured image ───────────────────────────────────────────────────── */
+    .post-featured-image {
+        background: #f8f7f4;
+        padding: 0 1.5rem;
+    }
+
+    .post-featured-image__inner {
+        max-width: 900px;
+        margin: 0 auto;
+        transform: translateY(-2rem);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    .post-featured-image__img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ── Content ──────────────────────────────────────────────────────────── */
+    .post-content-section {
+        background: #f8f7f4;
+        padding: 0 1.5rem 5rem;
+    }
+
+    .post-content-inner {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    /* WP content typography */
+    .wp-content {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #2a2a2a;
+    }
+
+    .wp-content :global(h2) {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #0a0e1a;
+        margin: 2.5rem 0 1rem;
+        line-height: 1.3;
+    }
+
+    .wp-content :global(h3) {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0a0e1a;
+        margin: 2rem 0 0.75rem;
+    }
+
+    .wp-content :global(h4) {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0a0e1a;
+        margin: 1.5rem 0 0.5rem;
+    }
+
+    .wp-content :global(p) {
+        margin: 0 0 1.4rem;
+    }
+
+    .wp-content :global(a) {
+        color: #0d1b4b;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s;
+    }
+
+    .wp-content :global(a:hover) {
+        color: #ffd200;
+    }
+
+    .wp-content :global(ul),
+    .wp-content :global(ol) {
+        margin: 0 0 1.4rem 1.5rem;
+        padding: 0;
+    }
+
+    .wp-content :global(li) {
+        margin-bottom: 0.5rem;
+    }
+
+    .wp-content :global(blockquote) {
+        border-left: 4px solid #ffd200;
+        margin: 2rem 0;
+        padding: 1rem 1.5rem;
+        background: rgba(255, 210, 0, 0.06);
+        border-radius: 0 8px 8px 0;
+        font-style: italic;
+        color: #444;
+    }
+
+    .wp-content :global(img) {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .wp-content :global(figure) {
+        margin: 2rem 0;
+    }
+
+    .wp-content :global(figcaption) {
+        font-size: 0.85rem;
+        color: #888;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .wp-content :global(pre),
+    .wp-content :global(code) {
+        font-family: "Fira Code", "Courier New", monospace;
+        background: #1a1f3a;
+        color: #e2e8f0;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+
+    .wp-content :global(pre) {
+        padding: 1.25rem 1.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+    }
+
+    .wp-content :global(code) {
+        padding: 0.2em 0.45em;
+    }
+
+    /* Back link */
+    .post-back {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .post-back__link {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #0d1b4b;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .post-back__link:hover {
+        color: #ffd200;
+    }
+</style>

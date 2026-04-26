@@ -26,7 +26,11 @@ import { Image } from "astro:assets";
 					We Play Well With
 				</h2>
 			</div>
-			<div class="w-32 lg:w-64 svg-animation" data-svg="https://media-v2.meanpug.com/wp-content/themes/meanpug-theme-v2/assets/animations/shapes/line-and-squiggle-doodle/line-and-squiggle-doodle.json"></div>
+			<div
+				class="w-32 lg:w-64 svg-animation"
+				data-svg="https://media-v2.meanpug.com/wp-content/themes/meanpug-theme-v2/assets/animations/shapes/line-and-squiggle-doodle/line-and-squiggle-doodle.json"
+			>
+			</div>
 		</div>
 
 		<div class="relative">
@@ -205,54 +209,3 @@ import { Image } from "astro:assets";
 		pointer-events: auto;
 	}
 </style>
-
-<script>
-	const initCaseTypes = () => {
-		const caseTypesSection = document.querySelector(".mp-case-types");
-		if (!(caseTypesSection instanceof HTMLElement)) return;
-
-		const details = Array.from(
-			caseTypesSection.querySelectorAll<HTMLElement>(
-				".mp-case-types__detail",
-			),
-		);
-		const links = Array.from(
-			caseTypesSection.querySelectorAll<HTMLButtonElement>(
-				".mp-case-types__link",
-			),
-		);
-
-		const activateDetail = (targetId: string) => {
-			const normalizedTargetId = targetId.replace(/^#/, "");
-			details.forEach((detail) => detail.classList.remove("active"));
-
-			const target = caseTypesSection.querySelector<HTMLElement>(
-				`.mp-case-types__detail[data-id="${normalizedTargetId}"]`,
-			);
-			if (target) {
-				target.classList.add("active");
-			}
-		};
-
-		links.forEach((link) => {
-			const targetId = link.getAttribute("data-target");
-			if (!targetId) return;
-
-			const parentLi = link.closest(".mp-case-type__parent");
-			const handler = () => activateDetail(targetId);
-
-			link.addEventListener("mouseenter", handler);
-			if (parentLi) {
-				parentLi.addEventListener("mouseenter", handler);
-			}
-		});
-	};
-
-	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", initCaseTypes, {
-			once: true,
-		});
-	} else {
-		initCaseTypes();
-	}
-</script>
