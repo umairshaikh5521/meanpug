@@ -1075,10 +1075,11 @@
                             value: function () {
                                 var t = this.options.breakpoints,
                                     e = this.$video.data("widthNow") || null,
+                                    clientW = window.innerWidth,
                                     n =
                                         Math.max(
                                             Object.keys(t).filter(function (t) {
-                                                return t >= document.body.clientWidth;
+                                                return t >= clientW;
                                             })
                                         ) || "default";
                                 (e && e == n) || (this.$video.data("widthNow", n), this.$video.attr("src", t[n].src));
