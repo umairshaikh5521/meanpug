@@ -11,7 +11,7 @@ interface Props {
 const {
 	title = "MeanPug | Award-Winning Digital Agency",
 	description = "MeanPug is a full-service digital agencyfor Law Firms.",
-	ogImage = "/og-image.png",
+	ogImage = "/og-image.avif",
 } = Astro.props;
 
 const siteBase = Astro.site ?? Astro.url;
@@ -28,7 +28,7 @@ const ogImageUrl = new URL(ogImage, siteBase).toString();
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
 		<link
 			rel="apple-touch-icon"
-			href="/assets/images/favicons/cropped-meanpug-300x300.png"
+			href="/assets/images/favicons/cropped-meanpug-300x300.avif"
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

@@ -32,7 +32,7 @@ const recentPosts = (await getPosts({ perPage: 4 })).filter((p) => p.slug !== sl
 <Layout
     title={`${stripHtml(post.title.rendered)} | MeanPug Blog`}
     description={plainExcerpt.slice(0, 160)}
-    ogImage={image ?? "/og-image.png"}
+    ogImage={image ?? "/og-image.avif"}
 >
     <Header />
 
@@ -173,7 +173,7 @@ const recentPosts = (await getPosts({ perPage: 4 })).filter((p) => p.slug !== sl
                                         <div class="glide__track" data-glide-el="track">
                                             <ul class="glide__slides">
                                                 {recentPosts.map((rPost) => {
-                                                    const rImage = getFeaturedImageUrl(rPost, "medium") || "/assets/images/logos/MeanPug-Logo.png";
+                                                    const rImage = getFeaturedImageUrl(rPost, "medium") || "/assets/images/logos/MeanPug-Logo.avif";
                                                     const rAlt = rPost._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || stripHtml(rPost.title.rendered);
                                                     return (
                                                         <li class="glide__slide">
@@ -239,7 +239,7 @@ const recentPosts = (await getPosts({ perPage: 4 })).filter((p) => p.slug !== sl
                                         width="300"
                                         height="200"
                                         alt="designed purple PDF of MeanPug marketing vendor checklist on yellow background"
-                                        src="https://media-v2.meanpug.com/wp-content/uploads/2022/11/choosing-a-marketing-vendor-cover-image-300x200.png"
+                                        src="https://media-v2.meanpug.com/wp-content/uploads/2022/11/choosing-a-marketing-vendor-cover-image-300x200.avif"
                                         class="w-full mp-animation mp-animation--scale-hover mp-animation--scale-hover--110 wp-post-image"
                                         loading="lazy"
                                         decoding="async"

@@ -19,5 +19,8 @@
     "node-html-parser": "^7.1.0",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
