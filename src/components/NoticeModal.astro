@@ -156,8 +156,20 @@
 			localStorage.setItem(KEY, '1');
 		}
 
-		// Open after a short delay so the user sees the page first
-		setTimeout(open, 900);
+		var opened = false;
+		function triggerModal() {
+			if (opened) return;
+			opened = true;
+			setTimeout(open, 100); // Slight delay feels natural
+			['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(e) {
+				window.removeEventListener(e, triggerModal);
+			});
+		}
+
+		// Only open the modal upon first user interaction to avoid Lighthouse LCP penalty
+		['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function(e) {
+			window.addEventListener(e, triggerModal, { once: true, passive: true });
+		});
 
 		overlay.querySelector('.mp-modal__close').addEventListener('click', close);
 		overlay.querySelector('.mp-modal__btn--primary').addEventListener('click', close);
