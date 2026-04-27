@@ -35,9 +35,3 @@
 /* Include critical UI components from original theme */
 @import "./critical.css";
 @import "./main.css";
-
-/* Custom paw cursor on list items */
-li:hover,
-li:hover * {
-    cursor: url("/assets/images/illustrations/ill-drag-paw-dark.png") 16 16, auto;
-}

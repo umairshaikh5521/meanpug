@@ -13,6 +13,8 @@ import type { Page } from "astro";
 
 export async function getStaticPaths({ paginate }) {
     const rawPosts = await getAllPosts();
+    console.log(rawPosts);
+
     // Move sticky (featured) posts to the front
     const sortedPosts = [...rawPosts].sort(
         (a, b) => (b.sticky ? 1 : 0) - (a.sticky ? 1 : 0),
