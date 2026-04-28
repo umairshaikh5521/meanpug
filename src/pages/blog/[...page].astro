@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
 import {
     getAllPosts,
     formatDate,
@@ -47,7 +47,8 @@ const posts = page.data;
                     >
                         <h1>Our <strong>Legal Marketing</strong><br /> Blog</h1>
                     </div>
-                    <span class="mp-header text-xl font-bold">Now on Astro</span
+                    <span class="mp-header text-xl font-bold italic"
+                        >(Built on Astro)</span
                     >
 
                     <div
